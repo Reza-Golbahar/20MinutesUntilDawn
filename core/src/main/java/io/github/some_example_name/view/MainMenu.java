@@ -40,7 +40,7 @@ public class MainMenu implements Screen {
         this.profileButton = new TextButton("Profile menu", skin);
         this.goToPreGameMenuButton = new TextButton("Go To Pre-game menu", skin);
         this.scoreboardButton = new TextButton("Scoreboard", skin);
-        this.goToHintMenuButton = new TextButton("Go To Hint menu", skin);
+        this.goToHintMenuButton = new TextButton("Go To Talent menu", skin);
         this.loadLastSavedGameButton = new TextButton("Load last saved game", skin);
         this.logoutButton = new TextButton("Logout", skin);
 
@@ -87,7 +87,7 @@ public class MainMenu implements Screen {
         goToHintMenuButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-                controller.goToHintMenu();
+                controller.goToTalentMenu();
             }
         });
 
@@ -165,7 +165,7 @@ public class MainMenu implements Screen {
 
         goToHintMenuButton.addListener(new ChangeListener() {
             @Override public void changed(ChangeEvent event, Actor actor) {
-                controller.goToHintMenu();
+                controller.goToTalentMenu();
             }
         });
 

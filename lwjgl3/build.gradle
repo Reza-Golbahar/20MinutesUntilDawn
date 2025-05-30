@@ -8,6 +8,7 @@ buildscript {
     if(enableGraalNative == 'true') {
       classpath "org.graalvm.buildtools.native:org.graalvm.buildtools.native.gradle.plugin:0.9.28"
     }
+
   }
 }
 plugins {
@@ -33,10 +34,13 @@ dependencies {
   implementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
   implementation project(':core')
 
-  if(enableGraalNative == 'true') {
-    implementation "io.github.berstanio:gdx-svmhelper-backend-lwjgl3:$graalHelperVersion"
+  // ✅ Add this to enable .ttf font support:
+  implementation "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
+  runtimeOnly "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
 
-    }
+  if (enableGraalNative == 'true') {
+    implementation "io.github.berstanio:gdx-svmhelper-backend-lwjgl3:$graalHelperVersion"
+  }
 }
 
 def os = System.properties['os.name'].toLowerCase()

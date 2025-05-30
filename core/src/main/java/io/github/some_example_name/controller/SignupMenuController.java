@@ -39,10 +39,7 @@ public class SignupMenuController {
             view.getPasswordField().setText("");
             view.getSecurityQuestionField().setText("");
             view.getSecurityAnswerField().setText("");
-//              if (result.equals("Success")) {
-//                  Main.getMain().getScreen().dispose();
-//                  Main.getMain().setScreen(new MainMenu(new MainMenuController(), GameAssetManager.getGameAssetManager().getSkin()));
-//              }
+            UserRepository.saveUsers();
         }
     }
 

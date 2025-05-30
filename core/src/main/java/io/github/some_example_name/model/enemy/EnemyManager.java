@@ -2,10 +2,12 @@ package io.github.some_example_name.model.enemy;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
 import io.github.some_example_name.Main;
 import io.github.some_example_name.model.GameTimer;
 import io.github.some_example_name.model.ItemSeed;
+import io.github.some_example_name.view.GameView;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -16,8 +18,8 @@ public class EnemyManager {
     private final ArrayList<Enemy> enemies = new ArrayList<>();
     private final GameTimer gameTimer;
 
-    private float tentacleSpawnTimer = 0f;
-    private float eyebatSpawnTimer = 0f;
+    private ElderBrain elderBrain;
+
     private float lastTentacleSpawn = 0f;
     private float lastEyeBatSpawn = 0f;
     private boolean elderBrainSpawned = false;
@@ -34,8 +36,6 @@ public class EnemyManager {
 
     public void update(float delta, Vector2 playerPosition) {
         float elapsedTime = gameTimer.getElapsedTime();
-        tentacleSpawnTimer += delta;
-        eyebatSpawnTimer += delta;
 
         // Spawn MonsterTentacle every 3 seconds if time > 30s
         if (elapsedTime > 30 && elapsedTime - lastTentacleSpawn >= 3f) {
@@ -52,8 +52,8 @@ public class EnemyManager {
 
         // Spawn ElderBrain boss once at BOSS_SPAWN_TIME
         if (!elderBrainSpawned && elapsedTime >= BOSS_SPAWN_TIME) {
-            ElderBrain elder = new ElderBrain(new Vector2(300, 300), new DashArena(backgroundTexture.getWidth(), backgroundTexture.getHeight()));
-            enemies.add(elder);
+            elderBrain = new ElderBrain(new Vector2(300, 300), new DashArena(backgroundTexture.getWidth(), backgroundTexture.getHeight()));
+            enemies.add(elderBrain);
             elderBrainSpawned = true;
         }
 
@@ -100,5 +100,21 @@ public class EnemyManager {
 
     public List<ItemSeed> getDroppedSeeds() {
         return droppedSeeds;
+    }
+
+    public boolean isElderBrainSpawned() {
+        return elderBrainSpawned;
+    }
+
+    public void setElderBrainSpawned(boolean elderBrainSpawned) {
+        this.elderBrainSpawned = elderBrainSpawned;
+    }
+
+    public ElderBrain getElderBrain() {
+        return elderBrain;
+    }
+
+    public void setElderBrain(ElderBrain elderBrain) {
+        this.elderBrain = elderBrain;
     }
 }

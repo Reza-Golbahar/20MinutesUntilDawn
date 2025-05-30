@@ -8,10 +8,20 @@ public class User {
     private String securityQuestion;
     private String securityAnswer;
     private String avatarPath; //if an image is saved, Texture or Image
-    private int score = 0;
+
+    private double score = 0;
+    private int killCount = 0;
+    private double survivalTime = 0;
+
     boolean isGuest = false;
+    private boolean sfxEnabled = true;
+    private boolean blackAndWhiteWorld = false;
+    private boolean autoReload = false;
+    private boolean autoAim = false;
 
-
+    public User() {
+        //Added for json loading
+    }
 
     public User(String username, String password) {
         this.username = username;
@@ -61,15 +71,64 @@ public class User {
         this.password = newPassword;
     }
 
-    public int getScore() {
+    public double getScore() {
         return score;
     }
 
-    public void setScore(int score) {
+    public void setScore(double score) {
         this.score = score;
     }
 
     public void setUsername(String username) {
         this.username = username;
     }
+
+    public boolean isSfxEnabled() {
+        return sfxEnabled;
+    }
+
+    public void setSfxEnabled(boolean sfxEnabled) {
+        this.sfxEnabled = sfxEnabled;
+    }
+
+    public boolean isBlackAndWhiteWorld() {
+        return blackAndWhiteWorld;
+    }
+
+    public void setBlackAndWhiteWorld(boolean blackAndWhiteWorld) {
+        this.blackAndWhiteWorld = blackAndWhiteWorld;
+    }
+
+    public boolean isAutoReload() {
+        return autoReload;
+    }
+
+    public void setAutoReload(boolean autoReload) {
+        this.autoReload = autoReload;
+    }
+
+    public int getKillCount() {
+        return killCount;
+    }
+
+    public void setKillCount(int killCount) {
+        this.killCount = killCount;
+    }
+
+    public double getSurvivalTime() {
+        return survivalTime;
+    }
+
+    public void setSurvivalTime(double survivalTime) {
+        this.survivalTime = survivalTime;
+    }
+
+    public boolean isAutoAim() {
+        return autoAim;
+    }
+
+    public void setAutoAim(boolean autoAim) {
+        this.autoAim = autoAim;
+    }
 }
+

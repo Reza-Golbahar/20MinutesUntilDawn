@@ -27,10 +27,17 @@ public class ControlsMapping {
         keyMap.put(ActionType.MoveDown, Input.Keys.S);
         keyMap.put(ActionType.MoveLeft, Input.Keys.A);
         keyMap.put(ActionType.MoveRight, Input.Keys.D);
-        keyMap.put(ActionType.Shoot, Input.Keys.SPACE);
+        keyMap.put(ActionType.Shoot, Input.Buttons.LEFT);
         keyMap.put(ActionType.Dash, Input.Keys.SHIFT_LEFT);
         keyMap.put(ActionType.Interact, Input.Keys.E);
         keyMap.put(ActionType.Reload, Input.Keys.R);
+        keyMap.put(ActionType.Pause, Input.Keys.ESCAPE);
+        keyMap.put(ActionType.ToggleAutoAim, Input.Keys.SPACE);
+        keyMap.put(ActionType.BossFightCheatCode, Input.Keys.B);
+        keyMap.put(ActionType.IncreaseHPCheatCode, Input.Keys.H);
+        keyMap.put(ActionType.LevelUpCheatCode, Input.Keys.L);
+        keyMap.put(ActionType.TripleProjectionCountCheatCode, Input.Keys.T);
+        keyMap.put(ActionType.FastForward1MinuteCheatCode, Input.Keys.F);
     }
 
     public void setKey(ActionType actionType, int keycode) {

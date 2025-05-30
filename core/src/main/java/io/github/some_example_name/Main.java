@@ -1,6 +1,7 @@
 package io.github.some_example_name;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import io.github.some_example_name.controller.SignupMenuController;
 import io.github.some_example_name.model.*;
@@ -14,16 +15,12 @@ public class Main extends Game {
     private static SpriteBatch batch;
 
     private static User currentUser;
-    private static Player currentPlayer;
     private static Pregame pregame;
 
     private static MusicPlayer musicPlayer;
-    private static boolean sfxEnabled = true;
     private static boolean paused = false;
 
-    public static Player getPlayer() {
-        return currentPlayer;
-    }
+    private static Screen gameScreen;
 
     @Override
     public void create() {
@@ -73,14 +70,6 @@ public class Main extends Game {
         return musicPlayer;
     }
 
-    public static boolean isSfxEnabled() {
-        return sfxEnabled;
-    }
-
-    public static void setSFXEnabled(boolean b) {
-        sfxEnabled = b;
-    }
-
     public static boolean isPaused() {
         return paused;
     }
@@ -95,5 +84,13 @@ public class Main extends Game {
 
     public static Pregame getPregame() {
         return pregame;
+    }
+
+    public static Screen getGameScreen() {
+        return gameScreen;
+    }
+
+    public static void setGameScreen(Screen gameScreen) {
+        Main.gameScreen = gameScreen;
     }
 }

@@ -2,15 +2,17 @@ package io.github.some_example_name.model.enemy;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import io.github.some_example_name.model.CollisionRect;
 
 public abstract class Enemy {
     protected Vector2 position;
-    protected int hp;
+    protected float hp;
     protected Sprite sprite;
     protected Texture texture;
+    protected TextureRegion currentFrame; // New field
     protected CollisionRect collisionRect;
 
     public Enemy(Vector2 spawnPosition, int hp) {
@@ -27,7 +29,7 @@ public abstract class Enemy {
         return hp <= 0;
     }
 
-    public void takeDamage(int damage) {
+    public void takeDamage(float damage) {
         hp -= damage;
     }
 
@@ -43,17 +45,27 @@ public abstract class Enemy {
         return collisionRect;
     }
 
+//    protected void updateCollisionRect() {
+//        if (texture != null) {
+//            if (collisionRect == null)
+//                collisionRect = new CollisionRect(position.x, position.y, texture.getWidth(), texture.getHeight());
+//            else
+//                collisionRect.move(position.x, position.y);
+//        } else if (sprite != null) {
+//            if (collisionRect == null)
+//                collisionRect = new CollisionRect(position.x, position.y, sprite.getWidth(), sprite.getHeight());
+//            else
+//                collisionRect.move(position.x, position.y);
+//        } else if (currentFrame != null) {  // Add this block
+//            if (collisionRect == null)
+//                collisionRect = new CollisionRect(position.x, position.y, currentFrame.getRegionWidth(), currentFrame.getRegionHeight());
+//            else
+//                collisionRect.move(position.x, position.y);
+//        }
+//    }
+
     protected void updateCollisionRect() {
-        if (texture != null) {
-            if (collisionRect == null)
-                collisionRect = new CollisionRect(position.x, position.y, texture.getWidth(), texture.getHeight());
-            else
-                collisionRect.move(position.x, position.y);
-        } else if (sprite != null) {
-            if (collisionRect == null)
-                collisionRect = new CollisionRect(position.x, position.y, sprite.getWidth(), sprite.getHeight());
-            else
-                collisionRect.move(position.x, position.y);
-        }
+        collisionRect.move(position.x, position.y);
     }
+
 }

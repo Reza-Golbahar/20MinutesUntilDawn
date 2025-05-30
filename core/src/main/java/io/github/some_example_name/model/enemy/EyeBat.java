@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
+import io.github.some_example_name.model.CollisionRect;
 import io.github.some_example_name.model.GameAssetManager;
 
 public class EyeBat extends Enemy {
@@ -21,7 +22,8 @@ public class EyeBat extends Enemy {
         super(spawnPosition, 50);
         this.projectileManager = projectileManager;
         flyAnimation = createAnimationFromPaths(GameAssetManager.getGameAssetManager().getEyeBatFrames(), FRAME_DURATION);
-        updateCollisionRect();
+        texture = new Texture(GameAssetManager.getGameAssetManager().getEyeBatFrames()[0]);
+        collisionRect = new CollisionRect(position.x, position.y, texture.getWidth(), texture.getHeight());
     }
 
     private Animation<TextureRegion> createAnimationFromPaths(String[] paths, float frameDuration) {
@@ -63,7 +65,7 @@ public class EyeBat extends Enemy {
 
     @Override
     public void render(SpriteBatch batch) {
-        TextureRegion currentFrame = flyAnimation.getKeyFrame(stateTime);
+        currentFrame = flyAnimation.getKeyFrame(stateTime);
         batch.draw(currentFrame, position.x, position.y);
     }
 }

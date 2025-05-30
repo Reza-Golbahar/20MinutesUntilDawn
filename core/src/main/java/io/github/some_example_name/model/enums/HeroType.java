@@ -23,24 +23,3 @@ public enum HeroType {
     public int getSpeed() { return speed; }
     public String getTexturePath() { return texturePath; }
 }
-
-//TODO: Description
-//    Abby("Right click to quickly shoot all of your remaining ammo in random directions"),
-//    Dasher(""),
-//    Diamond(""),
-//    Hastur(""),
-//    Hina("Right click to summon a Shadow Clone that attacks nearby enemis. Shadow Clone deals damage equal to your Bullet Damage."),
-//    Lilith(""),
-//    Luna(""),
-//    Raven(""),
-//    Scarlett(""),
-//    Shana("Can reroll upgrades once per level."),
-//    Spark(""),
-//    Yuki("");
-
-//    HeroType(String hint) {
-//        this.hint = hint;
-//    }
-//
-//    private String hint;
-

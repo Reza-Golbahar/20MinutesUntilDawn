@@ -24,15 +24,15 @@ public class SettingsMenuController {
     }
 
     public void toggleSFX(boolean enabled) {
-        Main.setSFXEnabled(enabled); // TODO: implement logic to mute or skip SFX playback
+        Main.getCurrentUser().setSfxEnabled(enabled);
     }
 
     public void setAutoReload(boolean checked) {
-        //TODO
+        Main.getCurrentUser().setAutoReload(checked);
     }
 
     public void setBlackWhiteDisplay(boolean checked) {
-        //TODO
+        Main.getCurrentUser().setBlackAndWhiteWorld(checked);
     }
 
     public void goToMainMenu() {

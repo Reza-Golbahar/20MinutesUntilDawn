@@ -1,7 +1,6 @@
 package io.github.some_example_name.controller;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import io.github.some_example_name.Main;
 import io.github.some_example_name.model.GameAssetManager;
 import io.github.some_example_name.model.User;
@@ -22,7 +21,7 @@ public class ProfileMenuController {
 
     public void setSelectedAvatar(String avatarPath) {
         Main.getCurrentUser().setAvatarPath(avatarPath);
-        // TODO: save changes in JSON
+        UserRepository.saveUsers();
     }
 
 
@@ -38,7 +37,7 @@ public class ProfileMenuController {
         }
         Main.getCurrentUser().setUsername(newUsername);
         view.getUsernameMessageLabel().setText("Username successfully changed.");
-        //TODO: saving the changes in json
+        UserRepository.saveUsers();
     }
 
     public void setPassword(String newPassword) {
@@ -52,6 +51,8 @@ public class ProfileMenuController {
 
     public void deleteAccount() {
         UserRepository.deleteUser(Main.getCurrentUser());
+        UserRepository.saveUsers();
+
         Main.getMain().getScreen().dispose();
         Main.getMain().setScreen(new LoginMenu(new LoginMenuController(), GameAssetManager.getGameAssetManager().getSkin()));
     }
@@ -68,10 +69,9 @@ public class ProfileMenuController {
             if (result == JFileChooser.APPROVE_OPTION) {
                 File file = fileChooser.getSelectedFile();
                 Gdx.app.postRunnable(() -> {
-                    Texture avatarTexture = new Texture(Gdx.files.absolute(file.getAbsolutePath()));
-                    Main.getCurrentUser().setAvatarPath(file.getAbsolutePath()); // writing file path
+                    Main.getCurrentUser().setAvatarPath(file.getAbsolutePath());
                     view.getUsernameMessageLabel().setText("Custom avatar selected.");
-                    // TODO: save in JSON
+                    UserRepository.saveUsers();
                 });
             }
         });

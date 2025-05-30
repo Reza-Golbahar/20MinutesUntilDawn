@@ -43,9 +43,7 @@ public class ForgetPasswordController {
         user.setPassword(newPassword);
         view.getMessageLabel().setText("Your password has been reset.");
         view.getPasswordLabel().setText(newPassword); // You could also remove this to be more secure
-
-        //TODO: save the changes in json
-        //UserRepository.save(); // if implemented
+        UserRepository.saveUsers();
     }
 
     private String generateStrongPassword() {

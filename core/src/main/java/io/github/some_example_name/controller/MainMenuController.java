@@ -31,7 +31,7 @@ public class MainMenuController {
         Main.getMain().setScreen(new ScoreBoardMenu(new ScoreBoardMenuController(), GameAssetManager.getGameAssetManager().getSkin()));
     }
 
-    public void goToHintMenu() {
+    public void goToTalentMenu() {
         Main.getMain().getScreen().dispose();
         Main.getMain().setScreen(new TalentMenu(new TalentMenuController(), GameAssetManager.getGameAssetManager().getSkin()));
     }

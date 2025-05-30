@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
+import io.github.some_example_name.model.CollisionRect;
 import io.github.some_example_name.model.GameAssetManager;
 
 public class ElderBrain extends Enemy {
@@ -14,6 +15,7 @@ public class ElderBrain extends Enemy {
     private static final int MAX_HEALTH = 400;
 
     private float dashTimer = 0f;
+    private float dashDurationTimer = 0f;
     private float stateTime = 0f;
     private boolean isDashing = false;
     private Vector2 dashDirection = new Vector2();
@@ -26,7 +28,8 @@ public class ElderBrain extends Enemy {
         this.arena = arena;
         this.animation = createAnimationFromPaths(
             new String[]{GameAssetManager.getGameAssetManager().getElderBrain()}, 0.2f);
-        updateCollisionRect();
+        texture = new Texture(GameAssetManager.getGameAssetManager().getElderBrain());
+        collisionRect = new CollisionRect(position.x, position.y, texture.getWidth(), texture.getHeight());
     }
 
     private Animation<TextureRegion> createAnimationFromPaths(String[] paths, float duration) {
@@ -43,13 +46,22 @@ public class ElderBrain extends Enemy {
         stateTime += delta;
         dashTimer += delta;
 
-        arena.update(delta);
+        //arena.update(delta);
 
-        if (dashTimer >= DASH_INTERVAL) {
+        if (!isDashing && dashTimer >= DASH_INTERVAL) {
             dashDirection = playerPosition.cpy().sub(position).nor();
             isDashing = true;
             dashTimer = 0f;
+            dashDurationTimer = 0f;
         }
+
+        if (isDashing) {
+            dashDurationTimer += delta;
+            if (dashDurationTimer >= 1f) {
+                isDashing = false;
+            }
+        }
+
 
         Vector2 movement = isDashing
             ? dashDirection.cpy().scl(DASH_SPEED * delta)
@@ -73,7 +85,11 @@ public class ElderBrain extends Enemy {
 
     @Override
     public void render(SpriteBatch batch) {
-        TextureRegion current = animation.getKeyFrame(stateTime);
-        batch.draw(current, position.x, position.y);
+        currentFrame = animation.getKeyFrame(stateTime);
+        batch.draw(currentFrame, position.x, position.y);
+    }
+
+    public DashArena getArena() {
+        return arena;
     }
 }

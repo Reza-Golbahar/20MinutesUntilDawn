@@ -11,7 +11,7 @@ public class ItemSeed {
 
     public ItemSeed(Vector2 position) {
         this.position = position;
-        this.texture = new Texture("Images/rune_ward.png"); // use your own asset path
+        this.texture = new Texture("Images/Elder/ElderBrain_Em.png");
         this.rect = new CollisionRect(position.x, position.y, texture.getWidth(), texture.getHeight());
     }
 

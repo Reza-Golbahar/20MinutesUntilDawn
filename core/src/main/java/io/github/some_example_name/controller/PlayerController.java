@@ -5,8 +5,10 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import io.github.some_example_name.Main;
+import io.github.some_example_name.model.ControlsMapping;
 import io.github.some_example_name.model.GameAssetManager;
 import io.github.some_example_name.model.Player;
+import io.github.some_example_name.model.enums.ActionType;
 
 public class PlayerController {
     private Player player;
@@ -42,30 +44,34 @@ public class PlayerController {
 
     public void handlePlayerInput() {
         boolean moving = false;
+        float actualSpeed = player.getSpeed() * player.getSpeedMultiplier();
 
-        if (Gdx.input.isKeyPressed(Input.Keys.W)) {
-            player.setPosY(player.getPosY() + player.getSpeed());
+        if (Gdx.input.isKeyPressed(ControlsMapping.getInstance().getKey(ActionType.MoveUp))) {
+            player.setPosY(player.getPosY() + actualSpeed);
             moving = true;
-            player.getRect().move(0, 1);
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.S)) {
-            player.setPosY(player.getPosY() - player.getSpeed());
+        if (Gdx.input.isKeyPressed(ControlsMapping.getInstance().getKey(ActionType.MoveDown))) {
+            player.setPosY(player.getPosY() - actualSpeed);
             moving = true;
-            player.getRect().move(0, -1);
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.A)) {
-            player.setPosX(player.getPosX() - player.getSpeed());
-            player.getPlayerSprite().setFlip(true, false);
+        if (Gdx.input.isKeyPressed(ControlsMapping.getInstance().getKey(ActionType.MoveLeft))) {
+            player.setPosX(player.getPosX() - actualSpeed);
+            if (!player.isFacingLeft()) {
+                player.getPlayerSprite().flip(true, false);  // flip horizontally
+                player.setFacingLeft(true);
+            }
             moving = true;
-            player.getRect().move(-1, 0);
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.D)) {
-            player.setPosX(player.getPosX() + player.getSpeed());
-            player.getPlayerSprite().setFlip(false, false);
+        if (Gdx.input.isKeyPressed(ControlsMapping.getInstance().getKey(ActionType.MoveRight))) {
+            player.setPosX(player.getPosX() + actualSpeed);
+            if (player.isFacingLeft()) {
+                player.getPlayerSprite().flip(true, false);  // flip back
+                player.setFacingLeft(false);
+            }
             moving = true;
-            player.getRect().move(1, 0);
         }
 
+        player.getRect().move(player.getPosX(), player.getPosY());
         player.setPlayerIdle(!moving);
         player.setPlayerRunning(Gdx.input.isKeyPressed(Input.Keys.SHIFT_LEFT) && moving);
     }

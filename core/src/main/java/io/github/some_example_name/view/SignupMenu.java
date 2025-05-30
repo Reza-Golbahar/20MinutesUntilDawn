@@ -9,6 +9,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import io.github.some_example_name.controller.SignupMenuController;
+import io.github.some_example_name.model.UserRepository;
 
 public class SignupMenu implements Screen {
     private Stage stage;
@@ -28,6 +29,7 @@ public class SignupMenu implements Screen {
 
     public SignupMenu(SignupMenuController controller, Skin skin) {
         this.controller = controller;
+        UserRepository.loadUsers();
 
         // UI Elements using the provided skin
         this.titleLabel = new Label("Signup Menu", skin);
@@ -102,12 +104,8 @@ public class SignupMenu implements Screen {
     @Override
     public void render(float v) {
         ScreenUtils.clear(0, 0, 0, 1);
-        //Main.getBatch().begin();
-        //Main.getBatch().end();
         stage.act(v);
         stage.draw();
-        //called this in ClickListener
-        //controller.handleSignUpMenuButtons();
     }
 
     @Override

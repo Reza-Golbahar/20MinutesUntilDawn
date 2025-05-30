@@ -6,7 +6,7 @@ import io.github.some_example_name.model.enums.WeaponType;
 public class Pregame {
     private HeroType heroType;
     private WeaponType weaponType;
-    private float duration;
+    private float duration = 600;
 
     public HeroType getHeroType() {
         return heroType;

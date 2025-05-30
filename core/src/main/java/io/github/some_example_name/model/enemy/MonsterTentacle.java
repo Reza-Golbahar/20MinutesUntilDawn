@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
+import io.github.some_example_name.model.CollisionRect;
 
 public class MonsterTentacle extends Enemy {
     private static final float SPEED = 100f;
@@ -35,7 +36,8 @@ public class MonsterTentacle extends Enemy {
             "Images/Tentacle Monster/T_TentacleEnemy_3.png"
         };
         idleAnimation = createAnimationFromPaths(idleFrames, FRAME_DURATION);
-        updateCollisionRect();
+        texture = new Texture("Images/Tentacle Monster/T_TentacleEnemy_0.png");
+        collisionRect = new CollisionRect(position.x, position.y, texture.getWidth(), texture.getHeight());
     }
 
     private Animation<TextureRegion> createAnimationFromPaths(String[] paths, float frameDuration) {
@@ -67,7 +69,7 @@ public class MonsterTentacle extends Enemy {
 
     @Override
     public void render(SpriteBatch batch) {
-        TextureRegion currentFrame = spawning ?
+        currentFrame = spawning ?
             spawnAnimation.getKeyFrame(stateTime) :
             idleAnimation.getKeyFrame(stateTime);
 

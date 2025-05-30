@@ -1,18 +1,25 @@
 package io.github.some_example_name.model;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
+import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.utils.GdxRuntimeException;
 import io.github.some_example_name.model.enums.HeroType;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class GameAssetManager {
+    private static ShaderProgram grayscaleShader;
+
     private static GameAssetManager gameAssetManager;
 
     private final Skin skin = new Skin(Gdx.files.internal("skin/star-soldier-ui.json"));
+
+    private final String whiteCircle = "Images/HitImpactFX_0.png";
 
     private final String[] backGroundMusicPaths = {
         "BackgroundMusic/Hello.mp3",
@@ -65,56 +72,42 @@ public class GameAssetManager {
 
     private final String treeMonsterFrames = "Images/Tree/T_TreeMonster_0.png";
 
-    private GameAssetManager() {
-        for (String path : avatarPaths) {
-            String key = extractAvatarName(path); // e.g., "Abby"
-            avatarTextures.put(key, new Texture(Gdx.files.internal(path)));
-        }
-    }
+    private final String SMGDual = "Images/Weapons/smg/T_DualSMGs_Icon.png";
 
-    private String extractAvatarName(String path) {
-        String filename = path.substring(path.lastIndexOf("/") + 1); // T_Abby_Portrait.png
-        return filename.substring(2, filename.indexOf("_Portrait")); // "Abby"
-    }
+    private final String[] SMGDualReloadFrames = {
+        "Images/Weapons/smg/SMGReload_0.png",
+        "Images/Weapons/smg/SMGReload_1.png",
+        "Images/Weapons/smg/SMGReload_2.png",
+        "Images/Weapons/smg/SMGReload_3.png"
+    } ;
 
-    public static GameAssetManager getGameAssetManager() {
-        if (gameAssetManager == null)
-            gameAssetManager = new GameAssetManager();
-        return gameAssetManager;
-    }
+    private final String shotgun = "Images/Weapons/shotgun/T_Shotgun_SS_0.png";
 
-    public Skin getSkin() {
-        return skin;
-    }
+    private final String[] shotgunReloadFrames = {
+        "Images/Weapons/shotgun/T_Shotgun_SS_1.png",
+        "Images/Weapons/shotgun/T_Shotgun_SS_2.png",
+        "Images/Weapons/shotgun/T_Shotgun_SS_3.png"
+    };
 
-    public Texture getTextureForAvatar(String name) {
-        return avatarTextures.get(name);
-    }
+    private final String revolver = "Images/Weapons/revolver/RevolverStill.png";
 
-    public String[] getAvatarNames() {
-        return avatarTextures.keySet().toArray(new String[0]);
-    }
+    private final String[] revolverReloadFrames = {
+        "Images/Weapons/revolver/RevolverReload_0.png",
+        "Images/Weapons/revolver/RevolverReload_1.png",
+        "Images/Weapons/revolver/RevolverReload_2.png",
+        "Images/Weapons/revolver/RevolverReload_3.png"
+    };
 
-    public void dispose() {
-        for (Texture texture : avatarTextures.values()) {
-            texture.dispose();
-        }
-        skin.dispose();
-    }
+    private final String bullet = "Images/Weapons/bullets/Icon_LightBullet.png";
+    private String ammo = "Images/Weapons/T_AmmoIcon.png";
 
-    public String[] getAvatarPaths() {
-        return avatarPaths;
-    }
+    private String[] redHeartFrames = {
+        "Images/Heart/HeartAnimation_0.png",
+        "Images/Heart/HeartAnimation_1.png",
+        "Images/Heart/HeartAnimation_2.png"
+    };
 
-    public String[] getBackGroundMusicPaths() {
-        return backGroundMusicPaths;
-    }
-
-    //needs to be modified
-    private final String smg = "Images/Sprite/SMGStill.png";
-    private final Texture smgTexture = new Texture(smg);
-
-    private final String bullet = "Images/Sprite/Icon_LightBullet.png";
+    private String blackHeart = "Images/Heart/HeartAnimation_3.png";
 
     private final String[] DasherIdleFrames = {
         "Images/Hero/Dasher/Idle/0.png",
@@ -246,16 +239,54 @@ public class GameAssetManager {
         "Images/Hero/Lilith/Run/3.png"
     };
 
-    public Texture getSmgTexture(){
-        return smgTexture;
+    public Sound youWinSound;
+    public Sound youLostSound;
+    public Sound levelUpSound;
+    public Sound reloadSound;
+    public Sound shootSound;
+
+    public void loadSounds() {
+        youWinSound = Gdx.audio.newSound(Gdx.files.internal("SFX/AudioClip/You Win (2).wav"));
+        youLostSound = Gdx.audio.newSound(Gdx.files.internal("SFX/AudioClip/You Lose (4).wav"));
+        levelUpSound = Gdx.audio.newSound(Gdx.files.internal("SFX/AudioClip/Special & Powerup (10).wav"));
+        reloadSound = Gdx.audio.newSound(Gdx.files.internal("SFX/AudioClip/Weapon_Shotgun_Reload.wav"));
+        shootSound = Gdx.audio.newSound(Gdx.files.internal("SFX/AudioClip/single_shot.wav"));
     }
 
-    public String getSmg(){
-        return smg;
+    public void disposeSounds() {
+        youWinSound.dispose();
+        youLostSound.dispose();
+        levelUpSound.dispose();
+        reloadSound.dispose();
+        shootSound.dispose();
+    }
+
+    public String getSMGDual(){
+        return SMGDual;
     }
 
     public String getBullet(){
         return bullet;
+    }
+
+    public String[] getSMGDualReloadFrames() {
+        return SMGDualReloadFrames;
+    }
+
+    public String getShotgun() {
+        return shotgun;
+    }
+
+    public String[] getShotgunReloadFrames() {
+        return shotgunReloadFrames;
+    }
+
+    public String getRevolver() {
+        return revolver;
+    }
+
+    public String[] getRevolverReloadFrames() {
+        return revolverReloadFrames;
     }
 
     public String getElderBrain() {
@@ -306,6 +337,52 @@ public class GameAssetManager {
         return LilithIdleFrames;
     }
 
+
+    private GameAssetManager() {
+        for (String path : avatarPaths) {
+            String key = extractAvatarName(path); // e.g., "Abby"
+            avatarTextures.put(key, new Texture(Gdx.files.internal(path)));
+        }
+    }
+
+    private String extractAvatarName(String path) {
+        String filename = path.substring(path.lastIndexOf("/") + 1); // T_Abby_Portrait.png
+        return filename.substring(2, filename.indexOf("_Portrait")); // "Abby"
+    }
+
+    public static GameAssetManager getGameAssetManager() {
+        if (gameAssetManager == null)
+            gameAssetManager = new GameAssetManager();
+        return gameAssetManager;
+    }
+
+    public Skin getSkin() {
+        return skin;
+    }
+
+    public Texture getTextureForAvatar(String name) {
+        return avatarTextures.get(name);
+    }
+
+    public String[] getAvatarNames() {
+        return avatarTextures.keySet().toArray(new String[0]);
+    }
+
+    public void dispose() {
+        for (Texture texture : avatarTextures.values()) {
+            texture.dispose();
+        }
+        skin.dispose();
+    }
+
+    public String[] getAvatarPaths() {
+        return avatarPaths;
+    }
+
+    public String[] getBackGroundMusicPaths() {
+        return backGroundMusicPaths;
+    }
+
     private Animation<Texture> createAnimationFromPaths(String[] paths, float frameDuration) {
         Texture[] textures = new Texture[paths.length];
         for (int i = 0; i < paths.length; i++) {
@@ -348,4 +425,35 @@ public class GameAssetManager {
         return null;
     }
 
+    public String getAmmo() {
+        return ammo;
+    }
+
+    public String[] getRedHeartFrames() {
+        return redHeartFrames;
+    }
+
+    public String getBlackHeart() {
+        return blackHeart;
+    }
+
+    public String getWhiteCircle() {
+        return whiteCircle;
+    }
+
+    public static void loadShaders() {
+        ShaderProgram.pedantic = false;
+        grayscaleShader = new ShaderProgram(
+            Gdx.files.internal("shaders/default.vert"), // You can copy LibGDX's default.vert or omit this
+            Gdx.files.internal("shaders/grayscale.frag")
+        );
+
+        if (!grayscaleShader.isCompiled()) {
+            throw new GdxRuntimeException("Grayscale shader failed: " + grayscaleShader.getLog());
+        }
+    }
+
+    public static ShaderProgram getGrayscaleShader() {
+        return grayscaleShader;
+    }
 }
