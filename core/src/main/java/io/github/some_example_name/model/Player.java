@@ -12,8 +12,8 @@ import java.util.ArrayList;
 
 
 public class Player {
-    private Texture playerTexture;
-    private Sprite playerSprite;
+    private transient Texture playerTexture;
+    private transient Sprite playerSprite;
 
     private float posX = 0;
     private float posY = 0;
@@ -31,17 +31,24 @@ public class Player {
     private float speed;
     private float speedMultiplier = 1;
 
-    private CollisionRect rect ;
+    private CollisionRect rect;
     private float time = 0;
     float screenWidth = Gdx.graphics.getWidth();
     float screenHeight = Gdx.graphics.getHeight();
     float spriteWidth;
     float spriteHeight;
-    private boolean facingLeft = false;
     private int killCount = 0;
 
     private boolean isPlayerIdle = true;
     private boolean isPlayerRunning = false;
+
+    private boolean tookDamage = false;
+    private float damageStateTime = 0f;
+
+    //For Saving
+    public Player() {
+
+    }
 
     public Player(HeroType heroType) {
         this.heroType = heroType;
@@ -181,8 +188,13 @@ public class Player {
         return invincibleTimer > 0;
     }
 
-    public int getLevel() { return level; }
-    public void setLevel(int level) { this.level = level; }
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
 
     public void setXp(int xp) {
         this.xp = xp;
@@ -212,18 +224,12 @@ public class Player {
         this.killCount++;
     }
 
-    public boolean isFacingLeft() {
-        return facingLeft;
-    }
-
-    public void setFacingLeft(boolean facingLeft) {
-        this.facingLeft = facingLeft;
-    }
 
     public void takeDamage() {
         if (invincibleTimer <= 0) {
             playerHealth -= 1;
             invincibleTimer = 1f;
+            tookDamage = true;
         }
     }
 
@@ -259,4 +265,35 @@ public class Player {
     public void setAbilitiesObtained(ArrayList<AbilityType> abilitiesObtained) {
         this.abilitiesObtained = abilitiesObtained;
     }
+
+    public boolean isTookDamage() {
+        return tookDamage;
+    }
+
+    public void setTookDamage(boolean tookDamage) {
+        this.tookDamage = tookDamage;
+    }
+
+    public float getDamageStateTime() {
+        return damageStateTime;
+    }
+
+    public void setDamageStateTime(float damageStateTime) {
+        this.damageStateTime = damageStateTime;
+    }
+
+    public void initTransientFields() {
+        Texture texture = GameAssetManager.getGameAssetManager().getIdleAnimation(heroType).getKeyFrame(0f); // first frame
+        this.playerSprite = new Sprite(texture);
+        this.playerTexture = texture;
+        playerSprite.setSize(playerTexture.getWidth() * 3, playerTexture.getHeight() * 3);
+        this.playerSprite.setPosition(posX, posY);
+
+        if (rect == null) {
+            this.rect = new CollisionRect(posX, posY, playerSprite.getWidth(), playerSprite.getHeight());
+        } else {
+            rect.move(posX, posY);
+        }
+    }
+
 }

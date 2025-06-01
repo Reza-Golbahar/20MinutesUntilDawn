@@ -69,7 +69,6 @@ public class WeaponController {
             weapon.reload();
         }
 
-        //if (Gdx.input.isButtonJustPressed(ControlsMapping.getInstance().getKey(ActionType.Shoot))) {
         if (ControlsMapping.getInstance().getKey(ActionType.Shoot) != Input.Buttons.LEFT) {
             if (Gdx.input.isKeyJustPressed(ControlsMapping.getInstance().getKey(ActionType.Shoot))) {
                 int mouseX = Gdx.input.getX();
@@ -157,15 +156,12 @@ public class WeaponController {
             for (Enemy e : enemiesSnapshot) {
                 if (e.isDead()) continue;
 
-                Sprite eSprite = e.getSprite();
-                //if (sprite != null && eSprite != null && sprite.getBoundingRectangle().overlaps(eSprite.getBoundingRectangle())) {
                 if (b.getRect().collidesWith(e.getRect())) {
-                    e.takeDamage(b.getDamage());
+                    e.takeDamage(b.getDamage(), b);
                     if (e.isDead()) weapon.getOwner().incrementKillCount();
                     bullets.remove(i);
                     collided = true;
                     break;
-
                 }
             }
 

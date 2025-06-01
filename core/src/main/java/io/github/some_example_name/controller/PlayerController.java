@@ -27,7 +27,9 @@ public class PlayerController {
 
         handlePlayerInput();
 
-        if (player.isPlayerRunning()) {
+        if (player.isTookDamage()){
+            damageAnimation(delta);
+        } else if (player.isPlayerRunning()) {
             runAnimation();
         } else if (!player.isPlayerIdle()) {
             walkAnimation();
@@ -40,7 +42,6 @@ public class PlayerController {
         }
         player.getPlayerSprite().draw(Main.getBatch());
     }
-
 
     public void handlePlayerInput() {
         boolean moving = false;
@@ -56,18 +57,11 @@ public class PlayerController {
         }
         if (Gdx.input.isKeyPressed(ControlsMapping.getInstance().getKey(ActionType.MoveLeft))) {
             player.setPosX(player.getPosX() - actualSpeed);
-            if (!player.isFacingLeft()) {
-                player.getPlayerSprite().flip(true, false);  // flip horizontally
-                player.setFacingLeft(true);
-            }
+            player.getPlayerSprite().flip(true, false);  // flip horizontally
             moving = true;
         }
         if (Gdx.input.isKeyPressed(ControlsMapping.getInstance().getKey(ActionType.MoveRight))) {
             player.setPosX(player.getPosX() + actualSpeed);
-            if (player.isFacingLeft()) {
-                player.getPlayerSprite().flip(true, false);  // flip back
-                player.setFacingLeft(false);
-            }
             moving = true;
         }
 
@@ -93,6 +87,20 @@ public class PlayerController {
         Animation<Texture> run = GameAssetManager.getGameAssetManager().getRunAnimation(player.getHeroType());
         player.getPlayerSprite().setRegion(run.getKeyFrame(player.getTime(), true));
         player.setTime(player.getTime() + Gdx.graphics.getDeltaTime());
+    }
+
+    public void damageAnimation(float delta) {
+        Animation<Texture> damage = GameAssetManager.getGameAssetManager().createAnimationFromPaths(
+            GameAssetManager.getGameAssetManager().getDamageAnimationFrames(), 0.15f
+        );
+        player.getPlayerSprite().setRegion(damage.getKeyFrame(player.getDamageStateTime(), true));
+        player.setDamageStateTime(player.getDamageStateTime() + delta);
+
+        // Stop damage animation after 0.4s (~2 frames)
+        if (player.getDamageStateTime() > 0.4f) {
+            player.setTookDamage(false);
+            player.setDamageStateTime(0f);
+        }
     }
 
 

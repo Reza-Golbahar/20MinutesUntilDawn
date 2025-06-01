@@ -13,7 +13,9 @@ public class PreGameMenuController {
 
     public void setView(PreGameMenu view) {
         this.view = view;
-        Main.setPregame(new Pregame());
+        Pregame pregame = new Pregame();
+        Main.setPregame(pregame);
+        Main.getCurrentUser().getSavedGame().setPregame(pregame);
     }
 
 

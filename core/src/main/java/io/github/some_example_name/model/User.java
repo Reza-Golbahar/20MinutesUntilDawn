@@ -1,6 +1,7 @@
 package io.github.some_example_name.model;
 
 import com.badlogic.gdx.math.MathUtils;
+import io.github.some_example_name.model.enums.Language;
 
 public class User {
     private String username;
@@ -19,6 +20,10 @@ public class User {
     private boolean autoReload = false;
     private boolean autoAim = false;
 
+    private GameState savedGame;
+
+    private Language currentLanguage = Language.ENGLISH;
+
     public User() {
         //Added for json loading
     }
@@ -30,6 +35,8 @@ public class User {
         String[] avatars = GameAssetManager.getGameAssetManager().getAvatarPaths();
         int index = MathUtils.random(avatars.length - 1);
         this.setAvatarPath(avatars[index]);
+
+        savedGame = new GameState();
     }
 
     public String getUsername() { return username; }
@@ -129,6 +136,22 @@ public class User {
 
     public void setAutoAim(boolean autoAim) {
         this.autoAim = autoAim;
+    }
+
+    public GameState getSavedGame() {
+        return savedGame;
+    }
+
+    public void setSavedGame(GameState savedGame) {
+        this.savedGame = savedGame;
+    }
+
+    public Language getCurrentLanguage() {
+        return currentLanguage;
+    }
+
+    public void setCurrentLanguage(Language language) {
+        this.currentLanguage = language;
     }
 }
 

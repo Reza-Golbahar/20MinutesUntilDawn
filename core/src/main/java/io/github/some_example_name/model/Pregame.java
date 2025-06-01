@@ -8,6 +8,11 @@ public class Pregame {
     private WeaponType weaponType;
     private float duration = 600;
 
+    //for saving
+    public Pregame() {
+
+    }
+
     public HeroType getHeroType() {
         return heroType;
     }

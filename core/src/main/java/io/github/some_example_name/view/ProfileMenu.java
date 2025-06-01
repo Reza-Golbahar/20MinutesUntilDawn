@@ -15,9 +15,7 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import io.github.some_example_name.Main;
 import io.github.some_example_name.controller.ProfileMenuController;
 import io.github.some_example_name.model.GameAssetManager;
-
-import javax.swing.*;
-import java.io.File;
+import io.github.some_example_name.model.enums.UIText;
 
 
 public class ProfileMenu implements Screen {
@@ -47,19 +45,21 @@ public class ProfileMenu implements Screen {
     public ProfileMenu(ProfileMenuController controller, Skin skin) {
         this.controller = controller;
 
-        this.currentUsernameLabel = new Label("Your current Username: %s".formatted(Main.getCurrentUser().getUsername()), skin);
+        this.currentUsernameLabel = new Label("%s: %s".formatted(
+            UIText.CURRENT_USERNAME.get(), Main.getCurrentUser().getUsername()), skin);
         this.newUsernameField = new TextField("", skin);
-        this.newUsernameField.setMessageText("Change username");
+        this.newUsernameField.setMessageText(UIText.CHANGE_USERNAME_PLACEHOLDER.get());
         this.usernameMessageLabel = new Label("", skin);
-        this.usernameSubmit = new TextButton("Submit Username", skin);
+        this.usernameSubmit = new TextButton(UIText.SUBMIT_USERNAME.get(), skin);
 
-        this.currentPasswordLabel = new Label("Your current Username: %s".formatted(Main.getCurrentUser().getPassword()), skin);
+        this.currentPasswordLabel = new Label( "%s: %s".formatted(
+            UIText.CURRENT_PASSWORD.get(), Main.getCurrentUser().getPassword()), skin);
         this.newPasswordField = new TextField("", skin);
-        this.newPasswordField.setMessageText("Change password");
+        this.newPasswordField.setMessageText(UIText.CHANGE_PASSWORD_PLACEHOLDER.get());
         this.passwordMessageLabel = new Label("", skin);
-        this.passwordSubmit = new TextButton("Submit Password", skin);
+        this.passwordSubmit = new TextButton(UIText.SUBMIT_PASSWORD.get(), skin);
 
-        this.deleteAccountButton = new TextButton("Delete Account", skin);
+        this.deleteAccountButton = new TextButton(UIText.DELETE_ACCOUNT.get(), skin);
 
         this.avatarGrid = new Table();
         for (String path : GameAssetManager.getGameAssetManager().getAvatarPaths()) {
@@ -80,8 +80,8 @@ public class ProfileMenu implements Screen {
 
         this.avatarScrollPane = new ScrollPane(avatarGrid);
 
-        fileChooserButton = new TextButton("Choose File", skin);
-        this.goToMainMenuButton = new TextButton("Go To Main Menu", skin);
+        this.fileChooserButton = new TextButton(UIText.CHOOSE_FILE.get(), skin);
+        this.goToMainMenuButton = new TextButton(UIText.GO_TO_MAIN_MENU.get(), skin);
 
         this.table = new Table();
 
@@ -121,24 +121,6 @@ public class ProfileMenu implements Screen {
                 controller.setAvatarAsUploadedFile();
             }
         });
-
-
-//        Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
-//        config.setWindowListener(new Lwjgl3WindowAdapter() {
-//            @Override
-//            public void filesDropped(String[] files) {
-//                for (String filePath : files) {
-//                    if (filePath.endsWith(".png") || filePath.endsWith(".jpg")) {
-//                        Gdx.app.postRunnable(() -> {
-//                            Texture avatarTexture = new Texture(Gdx.files.absolute(filePath));
-//                            Image newAvatar = new Image(avatarTexture);
-//                            setCustomAvatar(newAvatar); // Create this method
-//                        });
-//                        break;
-//                    }
-//                }
-//            }
-//        });
     }
 
     @Override
@@ -146,7 +128,6 @@ public class ProfileMenu implements Screen {
         stage = new Stage(new ScreenViewport());
         Gdx.input.setInputProcessor(stage);
 
-        Skin skin = GameAssetManager.getGameAssetManager().getSkin();
         // Outer table to fill the screen
         Table root = new Table();
         root.setFillParent(true);

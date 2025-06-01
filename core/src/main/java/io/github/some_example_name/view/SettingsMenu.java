@@ -11,11 +11,14 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import io.github.some_example_name.Main;
 import io.github.some_example_name.controller.SettingsMenuController;
 import io.github.some_example_name.model.ControlsMapping;
 import com.badlogic.gdx.Input;
 import io.github.some_example_name.model.GameAssetManager;
 import io.github.some_example_name.model.enums.ActionType;
+import io.github.some_example_name.model.enums.Language;
+import io.github.some_example_name.model.enums.UIText;
 
 import java.util.Map;
 
@@ -38,6 +41,9 @@ public class SettingsMenu implements Screen {
 
     private final Table leftTable;
     private final Table controlTable;
+    private final Label languageLabel;
+    private final SelectBox<Language> languageSelectBox;
+
 
     private final Table mainTable;
 
@@ -47,23 +53,36 @@ public class SettingsMenu implements Screen {
         }
         this.controller = controller;
 
-        this.titleLabel = new Label("Settings", skin);
+        titleLabel = new Label(UIText.SETTINGS_TITLE.get(), skin);
 
-        this.musicVolumeLabel = new Label("Music Volume: ", skin);
+        musicVolumeLabel = new Label(UIText.MUSIC_VOLUME.get(), skin);
         this.musicVolumeSlider = new Slider(0f, 1f, 0.01f, false, skin);
 
-        this.selectSongLabel = new Label("Select Song: ", skin);
+        selectSongLabel = new Label(UIText.SELECT_SONG.get(), skin);
         this.songSelectBox = new SelectBox<>(skin);
         this.songSelectBox.setItems("Hello-Adele", "Venom-Eminem", "Chandelier-Sia");
 
-        this.sfxToggle = new CheckBox("SFX activation", skin);
-        this.autoReloadToggle = new CheckBox("Auto-Reload activation", skin);
-        this.blackWhiteDisplayToggle = new CheckBox("Black and White Environment", skin);
-        this.goToMainMenuButton = new TextButton("Go to Main Menu", skin);
+        sfxToggle = new CheckBox(UIText.SFX_ACTIVATION.get(), skin);
+        autoReloadToggle = new CheckBox(UIText.AUTO_RELOAD_ACTIVATION.get(), skin);
+        blackWhiteDisplayToggle = new CheckBox(UIText.BLACK_WHITE_ENVIRONMENT.get(), skin);
+        goToMainMenuButton = new TextButton(UIText.GO_TO_MAIN_MENU.get(), skin);
 
         this.leftTable = new Table(skin);
         this.controlTable = new Table(skin);
         this.mainTable = new Table(skin);
+
+        this.languageLabel = new Label("Select Language: ", skin);
+        this.languageSelectBox = new SelectBox<>(skin);
+        this.languageSelectBox.setItems(Language.values());
+        this.languageSelectBox.setSelected(Main.getCurrentUser().getCurrentLanguage());
+
+        languageSelectBox.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                controller.changeLanguage(languageSelectBox.getSelected());
+            }
+        });
+
 
         // Listeners
         musicVolumeSlider.addListener(new ChangeListener() {
@@ -126,7 +145,10 @@ public class SettingsMenu implements Screen {
 
         leftTable.add(autoReloadToggle).colspan(2).left().pad(10).row();
         leftTable.add(blackWhiteDisplayToggle).colspan(2).left().pad(10).row();
+        leftTable.add(languageLabel).left().pad(10);
+        leftTable.add(languageSelectBox).fillX().pad(10).row();
         leftTable.add(goToMainMenuButton).colspan(2).fillX().pad(10).row();
+
 
         ControlsMapping controlsMapping = ControlsMapping.getInstance();
 

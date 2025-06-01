@@ -2,6 +2,7 @@ package io.github.some_example_name.controller;
 
 import io.github.some_example_name.Main;
 import io.github.some_example_name.model.GameAssetManager;
+import io.github.some_example_name.model.enums.Language;
 import io.github.some_example_name.view.MainMenu;
 
 import java.util.Map;
@@ -38,5 +39,10 @@ public class SettingsMenuController {
     public void goToMainMenu() {
         Main.getMain().getScreen().dispose();
         Main.getMain().setScreen(new MainMenu(new MainMenuController(), GameAssetManager.getGameAssetManager().getSkin()));
+    }
+
+    public void changeLanguage(Language selected) {
+        Main.getCurrentUser().setCurrentLanguage(selected);
+        Main.setLanguage(selected);
     }
 }

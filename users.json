@@ -1,83 +1,1934 @@
 [
 {
 	"class": "io.github.some_example_name.model.User",
-	"username": "Ehsan",
-	"password": "Ehsan!1234",
-	"securityQuestion": "Age",
-	"securityAnswer": "18",
-	"avatarPath": "Images/Texture2D/T_Dasher_Portrait.png",
-	"score": 0,
-	"killCount": 0,
-	"survivalTime": 0,
-	"isGuest": false,
-	"sfxEnabled": true,
-	"blackAndWhiteWorld": false,
-	"autoReload": false,
-	"autoAim": false
-},
-{
-	"class": "io.github.some_example_name.model.User",
-	"username": "Hossein",
-	"password": "Hossein!1234",
-	"securityQuestion": "Age",
-	"securityAnswer": "18",
-	"avatarPath": "Images/Texture2D/T_Raven_Portrait.png",
-	"score": 0,
-	"killCount": 0,
-	"survivalTime": 0,
-	"isGuest": false,
-	"sfxEnabled": true,
-	"blackAndWhiteWorld": false,
-	"autoReload": false,
-	"autoAim": false
-},
-{
-	"class": "io.github.some_example_name.model.User",
-	"username": "Mohammad1",
-	"password": "Mohammad!1234",
-	"securityQuestion": "Age",
-	"securityAnswer": "18",
-	"avatarPath": "Images/Texture2D/T_Luna_Portrait.png",
-	"score": 0,
-	"killCount": 0,
-	"survivalTime": 0,
-	"isGuest": false,
-	"sfxEnabled": true,
-	"blackAndWhiteWorld": false,
-	"autoReload": false,
-	"autoAim": false
-},
-{
-	"class": "io.github.some_example_name.model.User",
 	"username": "Reza",
 	"password": "Golbahar!1234",
 	"securityQuestion": "Age",
 	"securityAnswer": "18",
-	"avatarPath": "Images/Texture2D/T_Spark_Portrait.png",
-	"score": 100,
-	"killCount": 100,
-	"survivalTime": 100,
+	"avatarPath": "Images/Texture2D/T_Diamond_Portrait.png",
+	"score": 0,
+	"killCount": 0,
+	"survivalTime": 0,
 	"isGuest": false,
 	"sfxEnabled": true,
 	"blackAndWhiteWorld": false,
 	"autoReload": false,
-	"autoAim": false
-},
-{
-	"class": "io.github.some_example_name.model.User",
-	"username": "Mohammad",
-	"password": "Mohammad!1234",
-	"securityQuestion": "Age",
-	"securityAnswer": "18",
-	"avatarPath": "Images/Texture2D/T_Raven_Portrait.png",
-	"score": 50,
-	"killCount": 50,
-	"survivalTime": 50,
-	"isGuest": false,
-	"sfxEnabled": true,
-	"blackAndWhiteWorld": false,
-	"autoReload": false,
-	"autoAim": false
+	"autoAim": false,
+	"savedGame": {
+		"player": {
+			"posX": 1644,
+			"posY": 1280,
+			"xp": 12,
+			"level": 1,
+			"invincibleTimer": 1,
+			"heroType": "SHANA",
+			"playerHealth": 0,
+			"maxHP": 4,
+			"weapon": {
+				"type": "SHOTGUN",
+				"ammo": 2,
+				"maxAmmo": 2,
+				"damageMultiplier": 1,
+				"projectileCount": 4,
+				"reloaded": false,
+				"reloadTimer": 0
+			},
+			"abilitiesObtained": [],
+			"speed": 4,
+			"speedMultiplier": 1,
+			"rect": {
+				"x": 1644,
+				"y": 1280,
+				"width": 51,
+				"height": 84
+			},
+			"time": 29.554638,
+			"screenWidth": 1300,
+			"screenHeight": 699,
+			"spriteWidth": 51,
+			"spriteHeight": 84,
+			"killCount": 0,
+			"isPlayerIdle": false,
+			"isPlayerRunning": false,
+			"tookDamage": true,
+			"damageStateTime": 0
+		},
+		"enemies": [
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2945.5955,
+					"y": 2016.9097
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2945.5955,
+					"y": 2016.9097,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 635.6768,
+					"y": 1578.0612
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 635.6768,
+					"y": 1578.0612,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1737.9684,
+					"y": 1024.5681
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1737.9684,
+					"y": 1024.5681,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1007.57947,
+					"y": 1350.4547
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1007.57947,
+					"y": 1350.4547,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3104.1833,
+					"y": 120.51407
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3104.1833,
+					"y": 120.51407,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1317.1595,
+					"y": 828.85376
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1317.1595,
+					"y": 828.85376,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3664.4502,
+					"y": 613.92316
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3664.4502,
+					"y": 613.92316,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3369.912,
+					"y": 2620.0325
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3369.912,
+					"y": 2620.0325,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1058.6056,
+					"y": 1436.8595
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1058.6056,
+					"y": 1436.8595,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 297.64896,
+					"y": 1749.092
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 297.64896,
+					"y": 1749.092,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3381.1438,
+					"y": 2316.7915
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3381.1438,
+					"y": 2316.7915,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3207.4424,
+					"y": 2597.9194
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3207.4424,
+					"y": 2597.9194,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3544.87,
+					"y": 386.36337
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3544.87,
+					"y": 386.36337,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1414.119,
+					"y": 1010.3483
+				},
+				"hp": 90,
+				"collisionRect": {
+					"x": 1414.119,
+					"y": 1010.3483,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0,
+				"lastBulletHit": {
+					"direction": {
+						"x": -0.8379189,
+						"y": -0.5457948
+					},
+					"speed": 500,
+					"damage": 10,
+					"rect": {
+						"x": 1482.7079,
+						"y": 1080.0054,
+						"width": 20,
+						"height": 20
+					}
+				},
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1813.0754,
+					"y": 381.97614
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1813.0754,
+					"y": 381.97614,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 209.04137,
+					"y": 1455.3882
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 209.04137,
+					"y": 1455.3882,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2243.3123,
+					"y": 2011.3484
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2243.3123,
+					"y": 2011.3484,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3264.1045,
+					"y": 1970.508
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3264.1045,
+					"y": 1970.508,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 623.0478,
+					"y": 1278.8639
+				},
+				"hp": 90,
+				"collisionRect": {
+					"x": 623.0478,
+					"y": 1278.8639,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0,
+				"lastBulletHit": {
+					"direction": {
+						"x": -0.99950016,
+						"y": -0.031615846
+					},
+					"speed": 500,
+					"damage": 10,
+					"rect": {
+						"x": 689.2712,
+						"y": 1306.0819,
+						"width": 20,
+						"height": 20
+					}
+				},
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 146.06497,
+					"y": 2585.5896
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 146.06497,
+					"y": 2585.5896,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1688.6508,
+					"y": 938.1265
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1688.6508,
+					"y": 938.1265,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3342.5032,
+					"y": 278.7858
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3342.5032,
+					"y": 278.7858,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2916.3584,
+					"y": 505.77734
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2916.3584,
+					"y": 505.77734,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2764.911,
+					"y": 1558.1509
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2764.911,
+					"y": 1558.1509,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 797.0584,
+					"y": 995.24646
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 797.0584,
+					"y": 995.24646,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3264.5784,
+					"y": 689.5286
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3264.5784,
+					"y": 689.5286,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1671.9069,
+					"y": 1361.7427
+				},
+				"hp": 60,
+				"collisionRect": {
+					"x": 1671.9069,
+					"y": 1361.7427,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0,
+				"lastBulletHit": {
+					"direction": {
+						"x": -0.8660108,
+						"y": 0.5000254
+					},
+					"speed": 500,
+					"damage": 10,
+					"rect": {
+						"x": 1737.098,
+						"y": 1431.1289,
+						"width": 20,
+						"height": 20
+					}
+				},
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2337.1519,
+					"y": 281.8113
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2337.1519,
+					"y": 281.8113,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2128.9917,
+					"y": 318.40558
+				},
+				"hp": 90,
+				"collisionRect": {
+					"x": 2128.9917,
+					"y": 318.40558,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0,
+				"lastBulletHit": {
+					"direction": {
+						"x": 0.2550401,
+						"y": -0.96693045
+					},
+					"speed": 500,
+					"damage": 10,
+					"rect": {
+						"x": 2134.7283,
+						"y": 408.58337,
+						"width": 20,
+						"height": 20
+					}
+				},
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2581.9082,
+					"y": 2179.3103
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2581.9082,
+					"y": 2179.3103,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 282.43683,
+					"y": 848.1708
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 282.43683,
+					"y": 848.1708,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 173.9921,
+					"y": 2621.598
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 173.9921,
+					"y": 2621.598,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3118.5332,
+					"y": 1844.5255
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3118.5332,
+					"y": 1844.5255,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3626.0378,
+					"y": 2029.813
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3626.0378,
+					"y": 2029.813,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1026.666,
+					"y": 250.95256
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1026.666,
+					"y": 250.95256,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2923.7986,
+					"y": 2149.0396
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2923.7986,
+					"y": 2149.0396,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3739.9973,
+					"y": 2249.4922
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3739.9973,
+					"y": 2249.4922,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1670.5769,
+					"y": 322.99973
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1670.5769,
+					"y": 322.99973,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 192.0527,
+					"y": 1857.4684
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 192.0527,
+					"y": 1857.4684,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 295.45557,
+					"y": 255.92172
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 295.45557,
+					"y": 255.92172,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1834.5437,
+					"y": 1760.0597
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1834.5437,
+					"y": 1760.0597,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3614.4988,
+					"y": 407.07413
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3614.4988,
+					"y": 407.07413,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3078.948,
+					"y": 2319.0115
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3078.948,
+					"y": 2319.0115,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3642.2947,
+					"y": 2142.0771
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3642.2947,
+					"y": 2142.0771,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1127.557,
+					"y": 2678.4185
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1127.557,
+					"y": 2678.4185,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2277.3887,
+					"y": 1563.7302
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2277.3887,
+					"y": 1563.7302,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1316.8864,
+					"y": 1905.1256
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1316.8864,
+					"y": 1905.1256,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1225.3483,
+					"y": 683.7193
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1225.3483,
+					"y": 683.7193,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1271.535,
+					"y": 73.92672
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1271.535,
+					"y": 73.92672,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 485.38956,
+					"y": 2283.1917
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 485.38956,
+					"y": 2283.1917,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3131.7617,
+					"y": 1184.3566
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3131.7617,
+					"y": 1184.3566,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 326.6766,
+					"y": 1868.812
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 326.6766,
+					"y": 1868.812,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 609.24054,
+					"y": 1024.5076
+				},
+				"hp": 90,
+				"collisionRect": {
+					"x": 609.24054,
+					"y": 1024.5076,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0,
+				"lastBulletHit": {
+					"direction": {
+						"x": -0.9740237,
+						"y": -0.22644617
+					},
+					"speed": 500,
+					"damage": 10,
+					"rect": {
+						"x": 678.05,
+						"y": 1062.7034,
+						"width": 20,
+						"height": 20
+					}
+				},
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2598.5999,
+					"y": 969.53827
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2598.5999,
+					"y": 969.53827,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 466.64047,
+					"y": 345.91772
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 466.64047,
+					"y": 345.91772,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2591.5212,
+					"y": 1005.97955
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2591.5212,
+					"y": 1005.97955,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1759.8634,
+					"y": 1942.2083
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1759.8634,
+					"y": 1942.2083,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1578.667,
+					"y": 386.82474
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1578.667,
+					"y": 386.82474,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3242.9617,
+					"y": 920.76984
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3242.9617,
+					"y": 920.76984,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1586.0298,
+					"y": 2369.4558
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1586.0298,
+					"y": 2369.4558,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3522.9453,
+					"y": 2029.4249
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3522.9453,
+					"y": 2029.4249,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1967.3341,
+					"y": 1324.4845
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1967.3341,
+					"y": 1324.4845,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 120.87367,
+					"y": 2268.615
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 120.87367,
+					"y": 2268.615,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1877.3076,
+					"y": 894.5721
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1877.3076,
+					"y": 894.5721,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1298.8165,
+					"y": 2560.2908
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1298.8165,
+					"y": 2560.2908,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3034.682,
+					"y": 1200.5262
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3034.682,
+					"y": 1200.5262,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 589.45703,
+					"y": 1997.304
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 589.45703,
+					"y": 1997.304,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3246.5417,
+					"y": 1114.2833
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3246.5417,
+					"y": 1114.2833,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 288.29294,
+					"y": 1489.7283
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 288.29294,
+					"y": 1489.7283,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3235.8228,
+					"y": 553.0169
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3235.8228,
+					"y": 553.0169,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 753.58514,
+					"y": 2089.1587
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 753.58514,
+					"y": 2089.1587,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 317.95023,
+					"y": 1359.2351
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 317.95023,
+					"y": 1359.2351,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1366.3862,
+					"y": 1628.6661
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1366.3862,
+					"y": 1628.6661,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1210.7933,
+					"y": 2226.3552
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1210.7933,
+					"y": 2226.3552,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3104.1704,
+					"y": 1676.7079
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3104.1704,
+					"y": 1676.7079,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3518.305,
+					"y": 939.8686
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3518.305,
+					"y": 939.8686,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3540.775,
+					"y": 223.91914
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3540.775,
+					"y": 223.91914,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3490.395,
+					"y": 2170.834
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3490.395,
+					"y": 2170.834,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2494.548,
+					"y": 1090.3372
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2494.548,
+					"y": 1090.3372,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1377.7794,
+					"y": 2685.0642
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1377.7794,
+					"y": 2685.0642,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3657.7883,
+					"y": 1029.2332
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3657.7883,
+					"y": 1029.2332,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 926.73505,
+					"y": 1013.99084
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 926.73505,
+					"y": 1013.99084,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2529.7466,
+					"y": 2152.353
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2529.7466,
+					"y": 2152.353,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 358.86978,
+					"y": 11.825096
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 358.86978,
+					"y": 11.825096,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1394.6501,
+					"y": 1921.9933
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1394.6501,
+					"y": 1921.9933,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1419.217,
+					"y": 1722.2485
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1419.217,
+					"y": 1722.2485,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2911.394,
+					"y": 1115.9613
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2911.394,
+					"y": 1115.9613,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3696.1409,
+					"y": 196.49988
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3696.1409,
+					"y": 196.49988,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3416.7358,
+					"y": 496.09732
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3416.7358,
+					"y": 496.09732,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3546.7295,
+					"y": 2351.345
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3546.7295,
+					"y": 2351.345,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1177.0122,
+					"y": 887.65875
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1177.0122,
+					"y": 887.65875,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3129.5461,
+					"y": 1790.0432
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3129.5461,
+					"y": 1790.0432,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2642.5906,
+					"y": 1597.4916
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2642.5906,
+					"y": 1597.4916,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 564.78436,
+					"y": 1620.0502
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 564.78436,
+					"y": 1620.0502,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 352.44672,
+					"y": 2643.5403
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 352.44672,
+					"y": 2643.5403,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1718.0726,
+					"y": 695.8167
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1718.0726,
+					"y": 695.8167,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 127.45904,
+					"y": 688.8723
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 127.45904,
+					"y": 688.8723,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3218.3542,
+					"y": 769.67566
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3218.3542,
+					"y": 769.67566,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3652.184,
+					"y": 2134.018
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3652.184,
+					"y": 2134.018,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 16.45776,
+					"y": 644.42847
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 16.45776,
+					"y": 644.42847,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			}
+		],
+		"gameTimer": {
+			"elapsedTime": 150.77126
+		},
+		"pregame": {
+			"heroType": "SHANA",
+			"weaponType": "SHOTGUN",
+			"duration": 600
+		}
+	}
 },
 {
 	"class": "io.github.some_example_name.model.User",
@@ -85,14 +1936,1993 @@
 	"password": "Ali!1234",
 	"securityQuestion": "Age",
 	"securityAnswer": "18",
-	"avatarPath": "Images/Texture2D/T_Hina_Portrait.png",
-	"score": 40,
-	"killCount": 40,
-	"survivalTime": 40,
+	"avatarPath": "Images/Texture2D/T_Abby_Portrait.png",
+	"score": 0,
+	"killCount": 0,
+	"survivalTime": 0,
 	"isGuest": false,
 	"sfxEnabled": true,
 	"blackAndWhiteWorld": false,
 	"autoReload": false,
-	"autoAim": false
+	"autoAim": false,
+	"savedGame": {
+		"player": {
+			"posX": 1848,
+			"posY": 1444,
+			"xp": 0,
+			"level": 1,
+			"invincibleTimer": 0,
+			"heroType": "SHANA",
+			"playerHealth": 4,
+			"maxHP": 4,
+			"weapon": {
+				"type": "SHOTGUN",
+				"ammo": 2,
+				"maxAmmo": 2,
+				"damageMultiplier": 1,
+				"projectileCount": 4,
+				"reloaded": false,
+				"reloadTimer": 0
+			},
+			"abilitiesObtained": [],
+			"speed": 4,
+			"speedMultiplier": 1,
+			"rect": {
+				"x": 1848,
+				"y": 1444,
+				"width": 51,
+				"height": 84
+			},
+			"time": 3.9669552,
+			"screenWidth": 1300,
+			"screenHeight": 699,
+			"spriteWidth": 51,
+			"spriteHeight": 84,
+			"killCount": 0,
+			"isPlayerIdle": true,
+			"isPlayerRunning": false,
+			"tookDamage": false,
+			"damageStateTime": 0
+		},
+		"enemies": [
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3682.8743,
+					"y": 518.97174
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3682.8743,
+					"y": 518.97174,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1142.8025,
+					"y": 1816.2198
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1142.8025,
+					"y": 1816.2198,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2258.4895,
+					"y": 787.94977
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2258.4895,
+					"y": 787.94977,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3550.9536,
+					"y": 255.26009
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3550.9536,
+					"y": 255.26009,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 600.58405,
+					"y": 296.784
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 600.58405,
+					"y": 296.784,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3292.2114,
+					"y": 1839.1628
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3292.2114,
+					"y": 1839.1628,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 913.88727,
+					"y": 1993.679
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 913.88727,
+					"y": 1993.679,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 426.94037,
+					"y": 1968.9171
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 426.94037,
+					"y": 1968.9171,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2485.122,
+					"y": 1036.7911
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2485.122,
+					"y": 1036.7911,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1225.5239,
+					"y": 783.66315
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1225.5239,
+					"y": 783.66315,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3618.6516,
+					"y": 1768.2017
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3618.6516,
+					"y": 1768.2017,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 883.75543,
+					"y": 931.71576
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 883.75543,
+					"y": 931.71576,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 817.4213,
+					"y": 1905.581
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 817.4213,
+					"y": 1905.581,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 952.72974,
+					"y": 1496.662
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 952.72974,
+					"y": 1496.662,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2970.1587,
+					"y": 965.96783
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2970.1587,
+					"y": 965.96783,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3254.042,
+					"y": 2558.7727
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3254.042,
+					"y": 2558.7727,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1402.9747,
+					"y": 1360.7155
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1402.9747,
+					"y": 1360.7155,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3327.2817,
+					"y": 1442.5903
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3327.2817,
+					"y": 1442.5903,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1532.7018,
+					"y": 1053.2803
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1532.7018,
+					"y": 1053.2803,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2891.002,
+					"y": 260.1804
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2891.002,
+					"y": 260.1804,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1704.4895,
+					"y": 2504.1536
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1704.4895,
+					"y": 2504.1536,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2598.5256,
+					"y": 1690.1622
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2598.5256,
+					"y": 1690.1622,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 119.368324,
+					"y": 511.86224
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 119.368324,
+					"y": 511.86224,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1008.14453,
+					"y": 1939.2554
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1008.14453,
+					"y": 1939.2554,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 342.6757,
+					"y": 727.5892
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 342.6757,
+					"y": 727.5892,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1707.452,
+					"y": 2435.7056
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1707.452,
+					"y": 2435.7056,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 195.43002,
+					"y": 881.5895
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 195.43002,
+					"y": 881.5895,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1005.7322,
+					"y": 1242.5785
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1005.7322,
+					"y": 1242.5785,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1019.9236,
+					"y": 448.2025
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1019.9236,
+					"y": 448.2025,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3040.5266,
+					"y": 1117.5339
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3040.5266,
+					"y": 1117.5339,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2009.9933,
+					"y": 2376.8865
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2009.9933,
+					"y": 2376.8865,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 558.6775,
+					"y": 1344.3213
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 558.6775,
+					"y": 1344.3213,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 497.61612,
+					"y": 885.3259
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 497.61612,
+					"y": 885.3259,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2268.3398,
+					"y": 1783.8553
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2268.3398,
+					"y": 1783.8553,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3662.662,
+					"y": 1939.2869
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3662.662,
+					"y": 1939.2869,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 12.638277,
+					"y": 807.36426
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 12.638277,
+					"y": 807.36426,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 289.82916,
+					"y": 1708.5234
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 289.82916,
+					"y": 1708.5234,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2511.835,
+					"y": 2040.7217
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2511.835,
+					"y": 2040.7217,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3479.9631,
+					"y": 1884.6572
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3479.9631,
+					"y": 1884.6572,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3267.0623,
+					"y": 2263.7012
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3267.0623,
+					"y": 2263.7012,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3384.1682,
+					"y": 2107.5847
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3384.1682,
+					"y": 2107.5847,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2830.8577,
+					"y": 2530.5166
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2830.8577,
+					"y": 2530.5166,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1468.2811,
+					"y": 343.58536
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1468.2811,
+					"y": 343.58536,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3371.9312,
+					"y": 496.63538
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3371.9312,
+					"y": 496.63538,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3556.4912,
+					"y": 2450.9326
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3556.4912,
+					"y": 2450.9326,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2821.7803,
+					"y": 1235.4819
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2821.7803,
+					"y": 1235.4819,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 330.0569,
+					"y": 2565.4333
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 330.0569,
+					"y": 2565.4333,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2648.9531,
+					"y": 1259.263
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2648.9531,
+					"y": 1259.263,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2222.2695,
+					"y": 2242.9456
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2222.2695,
+					"y": 2242.9456,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1862.9521,
+					"y": 84.78471
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1862.9521,
+					"y": 84.78471,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3697.9976,
+					"y": 1436.553
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3697.9976,
+					"y": 1436.553,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1035.9556,
+					"y": 1875.746
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1035.9556,
+					"y": 1875.746,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1863.3334,
+					"y": 2202.6929
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1863.3334,
+					"y": 2202.6929,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2698.7214,
+					"y": 943.6216
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2698.7214,
+					"y": 943.6216,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2634.048,
+					"y": 2571.1675
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2634.048,
+					"y": 2571.1675,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 577.22656,
+					"y": 2431.875
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 577.22656,
+					"y": 2431.875,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1532.7567,
+					"y": 142.58553
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1532.7567,
+					"y": 142.58553,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3564.783,
+					"y": 990.863
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3564.783,
+					"y": 990.863,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2799.873,
+					"y": 661.41455
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2799.873,
+					"y": 661.41455,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3182.5554,
+					"y": 1449.4199
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3182.5554,
+					"y": 1449.4199,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2004.6265,
+					"y": 565.43933
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2004.6265,
+					"y": 565.43933,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1761.5999,
+					"y": 851.7366
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1761.5999,
+					"y": 851.7366,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2161.6025,
+					"y": 2605.0564
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2161.6025,
+					"y": 2605.0564,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2377.7224,
+					"y": 498.77008
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2377.7224,
+					"y": 498.77008,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2647.45,
+					"y": 2122.454
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2647.45,
+					"y": 2122.454,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2318.6494,
+					"y": 1892.0494
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2318.6494,
+					"y": 1892.0494,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3731.5894,
+					"y": 65.3519
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3731.5894,
+					"y": 65.3519,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 921.18854,
+					"y": 2556.364
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 921.18854,
+					"y": 2556.364,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3251.948,
+					"y": 322.60483
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3251.948,
+					"y": 322.60483,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3680.243,
+					"y": 2008.4495
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3680.243,
+					"y": 2008.4495,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1529.925,
+					"y": 1765.5925
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1529.925,
+					"y": 1765.5925,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 257.73337,
+					"y": 337.40768
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 257.73337,
+					"y": 337.40768,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2331.986,
+					"y": 547.949
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2331.986,
+					"y": 547.949,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1255.6693,
+					"y": 2609.2258
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1255.6693,
+					"y": 2609.2258,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3500.4722,
+					"y": 2636.8047
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3500.4722,
+					"y": 2636.8047,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3123.7927,
+					"y": 2578.3816
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3123.7927,
+					"y": 2578.3816,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3241.3909,
+					"y": 2157.346
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3241.3909,
+					"y": 2157.346,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1532.415,
+					"y": 2520.1484
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1532.415,
+					"y": 2520.1484,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1244.1543,
+					"y": 1465.1134
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1244.1543,
+					"y": 1465.1134,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3595.2458,
+					"y": 1763.838
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3595.2458,
+					"y": 1763.838,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2633.4038,
+					"y": 1149.0924
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2633.4038,
+					"y": 1149.0924,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2635.2056,
+					"y": 917.8461
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2635.2056,
+					"y": 917.8461,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1280.2607,
+					"y": 1949.2717
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1280.2607,
+					"y": 1949.2717,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 228.4005,
+					"y": 2503.9856
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 228.4005,
+					"y": 2503.9856,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 925.5223,
+					"y": 388.96954
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 925.5223,
+					"y": 388.96954,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 109.62247,
+					"y": 2497.2249
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 109.62247,
+					"y": 2497.2249,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3154.5107,
+					"y": 2638.8538
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3154.5107,
+					"y": 2638.8538,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 920.92944,
+					"y": 1961.5652
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 920.92944,
+					"y": 1961.5652,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3632.4763,
+					"y": 954.20654
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3632.4763,
+					"y": 954.20654,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2133.0447,
+					"y": 2623.424
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2133.0447,
+					"y": 2623.424,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3232.6309,
+					"y": 711.611
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3232.6309,
+					"y": 711.611,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 391.5041,
+					"y": 2558.512
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 391.5041,
+					"y": 2558.512,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2254.0928,
+					"y": 2575.857
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2254.0928,
+					"y": 2575.857,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1539.6642,
+					"y": 778.81244
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1539.6642,
+					"y": 778.81244,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2010.193,
+					"y": 276.495
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2010.193,
+					"y": 276.495,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 2744.8782,
+					"y": 776.90985
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 2744.8782,
+					"y": 776.90985,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 3644.7961,
+					"y": 1514.089
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 3644.7961,
+					"y": 1514.089,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 254.32469,
+					"y": 2583.5225
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 254.32469,
+					"y": 2583.5225,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 1265.4652,
+					"y": 432.84085
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 1265.4652,
+					"y": 432.84085,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.Tree",
+				"position": {
+					"x": 165.17122,
+					"y": 1372.7323
+				},
+				"hp": 100,
+				"collisionRect": {
+					"x": 165.17122,
+					"y": 1372.7323,
+					"width": 70,
+					"height": 92
+				},
+				"timeSinceLastDamage": 0.4,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.MonsterTentacle",
+				"position": {
+					"x": 386.90463,
+					"y": 1727.6787
+				},
+				"hp": 25,
+				"collisionRect": {
+					"x": 386.90463,
+					"y": 1727.6787,
+					"width": 29,
+					"height": 59
+				},
+				"timeSinceLastDamage": 2.1121,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0,
+				"stateTime": 1.2596627,
+				"spawning": false
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.EyeBat",
+				"position": {
+					"x": 1587.2007,
+					"y": 1107.8481
+				},
+				"hp": 50,
+				"collisionRect": {
+					"x": 1587.2007,
+					"y": 1107.8481,
+					"width": 79,
+					"height": 49
+				},
+				"timeSinceLastDamage": 2.1121,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0,
+				"shootTimer": 1.7120999,
+				"stateTime": 1.7120999,
+				"projectileManager": {
+					"projectiles": []
+				}
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.MonsterTentacle",
+				"position": {
+					"x": 1065.6492,
+					"y": 872.2239
+				},
+				"hp": 25,
+				"collisionRect": {
+					"x": 1065.6492,
+					"y": 872.2239,
+					"width": 29,
+					"height": 59
+				},
+				"timeSinceLastDamage": 1.88914,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0,
+				"stateTime": 1.0293422,
+				"spawning": false
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.EyeBat",
+				"position": {
+					"x": 1143.1418,
+					"y": 2017.2593
+				},
+				"hp": 50,
+				"collisionRect": {
+					"x": 1143.1418,
+					"y": 2017.2593,
+					"width": 79,
+					"height": 49
+				},
+				"timeSinceLastDamage": 1.88914,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0,
+				"shootTimer": 1.4891402,
+				"stateTime": 1.4891402,
+				"projectileManager": {
+					"projectiles": []
+				}
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.MonsterTentacle",
+				"position": {
+					"x": 1256.6372,
+					"y": 2244.891
+				},
+				"hp": 25,
+				"collisionRect": {
+					"x": 1256.6372,
+					"y": 2244.891,
+					"width": 29,
+					"height": 59
+				},
+				"timeSinceLastDamage": 1.7088437,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0,
+				"stateTime": 0.8425889,
+				"spawning": false
+			},
+			{
+				"class": "io.github.some_example_name.model.enemy.EyeBat",
+				"position": {
+					"x": 2445.4683,
+					"y": 2366.829
+				},
+				"hp": 50,
+				"collisionRect": {
+					"x": 2445.4683,
+					"y": 2366.829,
+					"width": 79,
+					"height": 49
+				},
+				"timeSinceLastDamage": 1.7088437,
+				"lastBulletHit": null,
+				"dying": false,
+				"deathStateTime": 0,
+				"shootTimer": 1.308844,
+				"stateTime": 1.308844,
+				"projectileManager": {
+					"projectiles": []
+				}
+			}
+		],
+		"gameTimer": {
+			"elapsedTime": 183.96695
+		},
+		"pregame": {
+			"heroType": "SHANA",
+			"weaponType": "SHOTGUN",
+			"duration": 600
+		}
+	}
 }
 ]

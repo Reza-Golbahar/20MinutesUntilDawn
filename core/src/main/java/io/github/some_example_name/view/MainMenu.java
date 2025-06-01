@@ -12,6 +12,7 @@ import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import io.github.some_example_name.Main;
 import io.github.some_example_name.controller.MainMenuController;
+import io.github.some_example_name.model.enums.UIText;
 
 public class MainMenu implements Screen {
     private Stage stage;
@@ -35,21 +36,21 @@ public class MainMenu implements Screen {
     public MainMenu(MainMenuController mainMenuController, Skin skin) {
         this.controller = mainMenuController;
 
-        this.titleLabel = new Label("Pre-game Menu", skin);
-        this.settingsButton = new TextButton("Settings", skin);
-        this.profileButton = new TextButton("Profile menu", skin);
-        this.goToPreGameMenuButton = new TextButton("Go To Pre-game menu", skin);
-        this.scoreboardButton = new TextButton("Scoreboard", skin);
-        this.goToHintMenuButton = new TextButton("Go To Talent menu", skin);
-        this.loadLastSavedGameButton = new TextButton("Load last saved game", skin);
-        this.logoutButton = new TextButton("Logout", skin);
+        titleLabel = new Label(UIText.PRE_GAME_MENU_TITLE.get(), skin);
+        settingsButton = new TextButton(UIText.SETTINGS.get(), skin);
+        profileButton = new TextButton(UIText.PROFILE_MENU.get(), skin);
+        goToPreGameMenuButton = new TextButton(UIText.GO_TO_PRE_GAME_MENU.get(), skin);
+        scoreboardButton = new TextButton(UIText.SCOREBOARD.get(), skin);
+        goToHintMenuButton = new TextButton(UIText.GO_TO_TALENT_MENU.get(), skin);
+        loadLastSavedGameButton = new TextButton(UIText.LOAD_LAST_SAVED_GAME.get(), skin);
+        logoutButton = new TextButton(UIText.LOGOUT.get(), skin);
 
         Texture avatarTexture = new Texture(Gdx.files.internal(Main.getCurrentUser().getAvatarPath()));
         avatarImage = new Image(avatarTexture);
         avatarImage.setScaling(Scaling.fit); // Ensures it scales nicely
 
-        this.usernameLabel = new Label("Username: %s".formatted(Main.getCurrentUser().getUsername()), skin);
-        this.scoreLabel = new Label("Score: %s".formatted(Main.getCurrentUser().getScore()), skin);
+        usernameLabel = new Label(UIText.USERNAME_LABEL.get() + " " + Main.getCurrentUser().getUsername(), skin);
+        scoreLabel = new Label(UIText.SCORE_LABEL.get() + " " + Main.getCurrentUser().getScore(), skin);
 
         this.table = new Table();
 

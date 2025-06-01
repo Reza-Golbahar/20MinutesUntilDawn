@@ -9,8 +9,7 @@ import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 import io.github.some_example_name.model.*;
-
-import java.awt.*;
+import io.github.some_example_name.model.enums.UIText;
 
 public class HUD {
     private BitmapFont font;
@@ -50,22 +49,18 @@ public class HUD {
 
         SpriteBatch batch = new SpriteBatch();
         batch.begin();
-        font.draw(batch, "Kills: " + player.getKillCount(), 20, screenHeight - 50);
+        font.draw(batch, UIText.KILLS.get() + player.getKillCount(), 20, screenHeight - 50);
 
         float timeRemaining = totalGameTime - gameTimer.getElapsedTime();
         int min = Math.max(0, (int) (timeRemaining / 60));
         int sec = Math.max(0, (int) (timeRemaining % 60));
-        font.draw(batch, String.format("Time: %02d:%02d", min, sec), 20, screenHeight - 80);
+        font.draw(batch, String.format("%s%02d:%02d", UIText.TIME.get(), min, sec), 20, screenHeight - 80);
 
-        font.draw(batch, "Ammo: " + weapon.getAmmo() + "/" + weapon.getMaxAmmo(), 20, screenHeight - 110);
-        font.draw(batch, "Level: " + player.getLevel(), 20, screenHeight - 140);
+        font.draw(batch, UIText.AMMO.get() + weapon.getAmmo() + "/" + weapon.getMaxAmmo(), 20, screenHeight - 110);
+        font.draw(batch, UIText.LEVEL.get() + player.getLevel(), 20, screenHeight - 140);
 
         renderHearts(batch);
         renderAmmo(batch);
-        //        font.draw(batch, "Kills: " + player.getKillCount(), 20, screenHeight - 50);
-//        font.draw(batch, "HP: " + player.getPlayerHealth(), 20, screenHeight - 80);
-//        font.draw(batch, "Ammo: " + weapon.getAmmo() + "/" + weapon.getMaxAmmo(), 20, screenHeight - 110);
-//        font.draw(batch, "Level: " + player.getLevel(), 20, screenHeight - 140);
         batch.end();
         renderXPBar();
     }

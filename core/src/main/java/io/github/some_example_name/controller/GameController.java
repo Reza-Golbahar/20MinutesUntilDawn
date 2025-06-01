@@ -1,16 +1,11 @@
 package io.github.some_example_name.controller;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 import io.github.some_example_name.Main;
 import io.github.some_example_name.model.*;
-import io.github.some_example_name.model.enemy.Enemy;
-import io.github.some_example_name.model.enemy.EnemyManager;
-import io.github.some_example_name.model.enemy.Projectile;
-import io.github.some_example_name.model.enemy.ProjectileManager;
+import io.github.some_example_name.model.enemy.*;
 import io.github.some_example_name.model.enums.ActionType;
 import io.github.some_example_name.view.GameView;
 import io.github.some_example_name.view.HUD;
@@ -28,7 +23,7 @@ public class GameController {
     private WeaponController weaponController;
     private EnemyManager enemyManager;
     private ProjectileManager projectileManager;
-    private final GameTimer gameTimer = new GameTimer();
+    private GameTimer gameTimer = new GameTimer();
     private LevelUpManager levelUpManager;
     private CheatCodeHandler cheatCodeHandler;
     private HUD hud;
@@ -45,8 +40,6 @@ public class GameController {
         camera.position.set(playerController.getPlayer().getPosX(), playerController.getPlayer().getPosY(), 0);
 
         weaponController = new WeaponController(weapon, camera);
-        //this.weaponController.getWeapon().setOwner(playerController.getPlayer());
-
         this.projectileManager = new ProjectileManager();
         enemyManager = new EnemyManager(gameTimer, worldController.getBackgroundTexture(), projectileManager);
         enemyManager.spawnInitialTrees(100);
@@ -74,11 +67,6 @@ public class GameController {
         }
 
         if (view != null) {
-            Texture lightMask = new Texture(GameAssetManager.getGameAssetManager().getWhiteCircle());
-            Main.getBatch().setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE);
-            Main.getBatch().draw(lightMask, playerController.getPlayer().getPosX() - 128, playerController.getPlayer().getPosY() - 128);
-            Main.getBatch().setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
-
             handlePauseAndCheatCodes();
             updateCamera(playerController.getPlayer()); // 👈 Update the camera position
             worldController.update();
@@ -115,7 +103,7 @@ public class GameController {
     private void handlePauseAndCheatCodes() {
         if (Gdx.input.isKeyPressed(ControlsMapping.getInstance().getKey(ActionType.Pause))) {
             Main.setPaused(true);
-            Main.getMain().setScreen(new PauseMenu(new PauseMenuController(),
+            Main.getMain().setScreen(new PauseMenu(new PauseMenuController(playerController.getPlayer(), gameTimer, enemyManager.getEnemies()),
                 GameAssetManager.getGameAssetManager().getSkin(), playerController.getPlayer()));
         }
         cheatCodeHandler.checkPlayerInput();
@@ -140,8 +128,16 @@ public class GameController {
                 player.takeDamage();
             }
         }
-    }
 
+        ElderBrain elderBrain = enemyManager.getElderBrain();
+        if (elderBrain != null) {
+            if (!elderBrain.isDead()) {
+                if (elderBrain.getArena().collidesWith(player.getPosition())) {
+                    player.takeDamage();
+                }
+            }
+        }
+    }
 
 
     public PlayerController getPlayerController() {
@@ -165,5 +161,17 @@ public class GameController {
     public void updateCamera(Player player) {
         camera.position.set(player.getPosX(), player.getPosY(), 0);
         camera.update();
+    }
+
+    public void setGameTimer(GameTimer gameTimer) {
+        this.gameTimer = gameTimer;
+    }
+
+    public void setHud(HUD hud) {
+        this.hud = hud;
+    }
+
+    public HUD getHud() {
+        return hud;
     }
 }

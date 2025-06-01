@@ -2,6 +2,11 @@ package io.github.some_example_name.controller;
 
 import io.github.some_example_name.Main;
 import io.github.some_example_name.model.GameAssetManager;
+import io.github.some_example_name.model.GameState;
+import io.github.some_example_name.model.UserRepository;
+import io.github.some_example_name.model.enemy.Enemy;
+import io.github.some_example_name.model.enemy.EyeBat;
+import io.github.some_example_name.model.enemy.Projectile;
 import io.github.some_example_name.view.*;
 
 public class MainMenuController {
@@ -37,8 +42,29 @@ public class MainMenuController {
     }
 
     public void loadLastSavedGame() {
-        //TODO
+        GameState savedGame = UserRepository.findUserByUsername(Main.getCurrentUser().getUsername()).getSavedGame();
+
+        savedGame.getPlayer().initTransientFields();
+        savedGame.getPlayer().getWeapon().initTransientFields(savedGame.getPlayer());
+        savedGame.getPlayer().getWeapon().updateWeaponPosition();  // position weapon relative to player
+
+        for (Enemy enemy : savedGame.getEnemies()) {
+            enemy.initTransientField();
+            if (enemy instanceof EyeBat) {
+                for (Projectile projectile : ((EyeBat)enemy).getProjectileManager().getProjectiles()) {
+                    projectile.initTransientField();
+                }
+            }
+        }
+
+        Main.getMain().getScreen().dispose();
+
+        GameView gameView = new GameView(savedGame, GameAssetManager.getGameAssetManager().getSkin());
+
+        Main.getMain().setScreen(gameView);
     }
+
+
 
     public void logout() {
         Main.setCurrentUser(null);

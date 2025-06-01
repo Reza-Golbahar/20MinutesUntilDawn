@@ -28,18 +28,18 @@ public class GameAssetManager {
     };
 
     private final String[] avatarPaths = {
-        "Images/Texture2D/T_Abby_Portrait.png",
-        "Images/Texture2D/T_Dasher_Portrait.png",
-        "Images/Texture2D/T_Diamond_Portrait.png",
-        "Images/Texture2D/T_Hastur_Portrait.png",
-        "Images/Texture2D/T_Hina_Portrait.png",
-        "Images/Texture2D/T_Lilith_Portrait.png",
-        "Images/Texture2D/T_Luna_Portrait.png",
-        "Images/Texture2D/T_Raven_Portrait.png",
-        "Images/Texture2D/T_Scarlett_Portrait.png",
-        "Images/Texture2D/T_Shana_Portrait.png",
-        "Images/Texture2D/T_Spark_Portrait.png",
-        "Images/Texture2D/T_Yuki_Portrait.png"
+        "Images/Portraits/T_Abby_Portrait.png",
+        "Images/Portraits/T_Dasher_Portrait.png",
+        "Images/Portraits/T_Diamond_Portrait.png",
+        "Images/Portraits/T_Hastur_Portrait.png",
+        "Images/Portraits/T_Hina_Portrait.png",
+        "Images/Portraits/T_Lilith_Portrait.png",
+        "Images/Portraits/T_Luna_Portrait.png",
+        "Images/Portraits/T_Raven_Portrait.png",
+        "Images/Portraits/T_Scarlett_Portrait.png",
+        "Images/Portraits/T_Shana_Portrait.png",
+        "Images/Portraits/T_Spark_Portrait.png",
+        "Images/Portraits/T_Yuki_Portrait.png"
     };
 
     private final Map<String, Texture> avatarTextures = new HashMap<>();
@@ -71,6 +71,15 @@ public class GameAssetManager {
     private final String eyeBatProjectile = "Images/Eyebat/T_EyeBat_EM.png";
 
     private final String treeMonsterFrames = "Images/Tree/T_TreeMonster_0.png";
+
+    private final String[] damageAnimationFrames = {
+        "Images/DamageAnimation/ExplosionFX_0.png",
+        "Images/DamageAnimation/ExplosionFX_1.png",
+        "Images/DamageAnimation/ExplosionFX_2.png",
+        "Images/DamageAnimation/ExplosionFX_3.png",
+        "Images/DamageAnimation/ExplosionFX_4.png",
+        "Images/DamageAnimation/ExplosionFX_5.png"
+    };
 
     private final String SMGDual = "Images/Weapons/smg/T_DualSMGs_Icon.png";
 
@@ -383,7 +392,7 @@ public class GameAssetManager {
         return backGroundMusicPaths;
     }
 
-    private Animation<Texture> createAnimationFromPaths(String[] paths, float frameDuration) {
+    public Animation<Texture> createAnimationFromPaths(String[] paths, float frameDuration) {
         Texture[] textures = new Texture[paths.length];
         for (int i = 0; i < paths.length; i++) {
             textures[i] = new Texture(Gdx.files.internal(paths[i]));
@@ -455,5 +464,9 @@ public class GameAssetManager {
 
     public static ShaderProgram getGrayscaleShader() {
         return grayscaleShader;
+    }
+
+    public String[] getDamageAnimationFrames() {
+        return damageAnimationFrames;
     }
 }

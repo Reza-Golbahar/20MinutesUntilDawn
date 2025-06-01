@@ -5,6 +5,8 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import io.github.some_example_name.controller.SignupMenuController;
 import io.github.some_example_name.model.*;
+import io.github.some_example_name.model.enums.Language;
+import io.github.some_example_name.view.GameView;
 import io.github.some_example_name.view.SignupMenu;
 
 /**
@@ -20,7 +22,9 @@ public class Main extends Game {
     private static MusicPlayer musicPlayer;
     private static boolean paused = false;
 
-    private static Screen gameScreen;
+    private static GameView gameScreen;
+
+    private static Language language = Language.ENGLISH;
 
     @Override
     public void create() {
@@ -86,11 +90,19 @@ public class Main extends Game {
         return pregame;
     }
 
-    public static Screen getGameScreen() {
+    public static GameView getGameScreen() {
         return gameScreen;
     }
 
-    public static void setGameScreen(Screen gameScreen) {
+    public static void setGameScreen(GameView gameScreen) {
         Main.gameScreen = gameScreen;
+    }
+
+    public static Language getLanguage() {
+        return language;
+    }
+
+    public static void setLanguage(Language language) {
+        Main.language = language;
     }
 }

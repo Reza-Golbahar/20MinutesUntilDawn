@@ -1,6 +1,7 @@
 package io.github.some_example_name.view;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.scenes.scene2d.*;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
@@ -20,12 +21,15 @@ public class TalentMenu implements Screen {
     private final Stage stage;
     private final Skin skin;
     private final TalentMenuController controller;
-    private final ControlsMapping controlsMapping = new ControlsMapping();
+    private final ControlsMapping controlsMapping;
     private final TextButton goToMainMenu;
+    private final TextButton loadLastSavedGame;
 
     private final Table contentTable;
 
     public TalentMenu(TalentMenuController controller, Skin skin) {
+        this.controlsMapping = ControlsMapping.getInstance();
+
         this.controller = controller;
         this.skin = skin;
         this.stage = new Stage(new ScreenViewport());
@@ -58,17 +62,26 @@ public class TalentMenu implements Screen {
         // === Section: Key Bindings ===
         contentTable.add(new Label("Current Game Controls", skin, "title")).padTop(20).left().row();
         for (Map.Entry<ActionType, Integer> entry : controlsMapping.getAllMappings().entrySet()) {
-            String keyName = com.badlogic.gdx.Input.Keys.toString(entry.getValue());
+            String keyName = Input.Keys.toString(entry.getValue());
             contentTable.add(new Label(entry.getKey().getDisplayName() + ": " + keyName, skin)).left().row();
         }
 
         this.goToMainMenu = new TextButton("Go To Main Menu", skin);
+        this.loadLastSavedGame = new TextButton("Load Last Saved Game", skin);  // initialize button
+
         contentTable.add(goToMainMenu);
 
         goToMainMenu.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 controller.goToMainMenu();
+            }
+        });
+
+        loadLastSavedGame.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                controller.loadSavedGame();
             }
         });
     }

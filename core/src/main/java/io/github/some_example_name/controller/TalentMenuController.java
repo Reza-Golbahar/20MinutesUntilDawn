@@ -9,4 +9,8 @@ public class TalentMenuController {
         Main.getMain().getScreen().dispose();
         Main.getMain().setScreen(new MainMenu(new MainMenuController(), GameAssetManager.getGameAssetManager().getSkin()));
     }
+
+    public void loadSavedGame() {
+        (new MainMenuController()).loadLastSavedGame();
+    }
 }

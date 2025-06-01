@@ -5,11 +5,16 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Vector2;
 
 public class Bullet {
-    private Sprite sprite;
+    private transient Sprite sprite;
     private Vector2 direction;
     private float speed = 500f;
     private float damage;
     private CollisionRect rect;
+
+    //for saving
+    public Bullet() {
+
+    }
 
     public Bullet(float startX, float startY, float targetX, float targetY, float damage) {
         Texture texture = new Texture(GameAssetManager.getGameAssetManager().getBullet());
@@ -22,6 +27,15 @@ public class Bullet {
         this.damage = damage;
 
         this.rect = new CollisionRect(startX, startY, sprite.getWidth(), sprite.getHeight());
+    }
+
+    public void rebuildSprite() {
+        Texture texture = new Texture(GameAssetManager.getGameAssetManager().getBullet());
+        this.sprite = new Sprite(texture);
+        this.sprite.setSize(20, 20);
+
+        // reposition sprite based on current rect or direction
+        this.sprite.setPosition(rect.x, rect.y);
     }
 
     public void update(float delta) {
@@ -59,4 +73,20 @@ public class Bullet {
     public CollisionRect getRect() {
         return rect;
     }
+
+    public void initTransientFields() {
+        // Rebuild sprite from asset manager
+        Texture texture = new Texture(GameAssetManager.getGameAssetManager().getBullet());
+        this.sprite = new Sprite(texture);
+        this.sprite.setSize(20, 20);
+
+        // Reposition based on rect if available, or fallback to origin
+        if (rect != null) {
+            this.sprite.setPosition(rect.x, rect.y);
+        } else {
+            this.sprite.setPosition(0, 0);
+            this.rect = new CollisionRect(0, 0, 20, 20);
+        }
+    }
+
 }

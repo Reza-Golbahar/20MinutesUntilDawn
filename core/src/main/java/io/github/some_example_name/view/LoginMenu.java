@@ -9,6 +9,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import io.github.some_example_name.controller.LoginMenuController;
+import io.github.some_example_name.model.enums.UIText;
 
 public class LoginMenu implements Screen {
     private Stage stage;
@@ -27,19 +28,19 @@ public class LoginMenu implements Screen {
     public LoginMenu(LoginMenuController controller, Skin skin) {
         this.controller = controller;
 
-        this.titleLabel = new Label("Login Menu", skin);
+        this.titleLabel = new Label(UIText.LOGIN_MENU_TITLE.get(), skin);
         this.usernameField = new TextField("", skin);
-        this.usernameField.setMessageText("Username");
+        this.usernameField.setMessageText(UIText.USERNAME.get());
 
         this.passwordField = new TextField("", skin);
-        this.passwordField.setMessageText("Password");
+        this.passwordField.setMessageText(UIText.PASSWORD.get());
         this.passwordField.setPasswordCharacter('*');
         this.passwordField.setPasswordMode(true);
 
-        this.loginButton = new TextButton("Login", skin);
+        loginButton = new TextButton(UIText.LOGIN.get(), skin);
         this.errorLabel = new Label("", skin);
-        this.forgetPasswordButton = new TextButton("Forget Password", skin);
-        this.goBackToSignupMenuButton = new TextButton("Go Back To Signup Menu", skin);
+        forgetPasswordButton = new TextButton(UIText.FORGET_PASSWORD.get(), skin);
+        goBackToSignupMenuButton = new TextButton(UIText.GO_BACK_TO_SIGNUP.get(), skin);
 
         this.table = new Table();
 

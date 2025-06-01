@@ -32,10 +32,12 @@ public class EndPage implements Screen {
         this.usernameLabel =  new Label("Username: %s".formatted(Main.getCurrentUser().getUsername()), skin);
 
         float score = gameTimer.getElapsedTime() * player.getKillCount();
-        Main.getCurrentUser().setScore(Main.getCurrentUser().getScore() + score);
-
         this.surviveTimeLabel = new Label("Time survived: %.1f".formatted(gameTimer.getElapsedTime()), skin);
-        Main.getCurrentUser().setSurvivalTime(Main.getCurrentUser().getSurvivalTime() + gameTimer.getElapsedTime());
+
+        if (won) {
+            Main.getCurrentUser().setScore(Main.getCurrentUser().getScore() + score);
+            Main.getCurrentUser().setSurvivalTime(Main.getCurrentUser().getSurvivalTime() + gameTimer.getElapsedTime());
+        }
 
         this.killCountLabel = new Label("Kill Count: %s".formatted(player.getKillCount()), skin);
         this.scoreLabel = new Label("Score: %.1f".formatted(score), skin);

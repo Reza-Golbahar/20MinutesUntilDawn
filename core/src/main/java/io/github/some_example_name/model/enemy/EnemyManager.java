@@ -1,13 +1,13 @@
 package io.github.some_example_name.model.enemy;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
 import io.github.some_example_name.Main;
+import io.github.some_example_name.model.GameAssetManager;
 import io.github.some_example_name.model.GameTimer;
 import io.github.some_example_name.model.ItemSeed;
-import io.github.some_example_name.view.GameView;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -15,7 +15,7 @@ import java.util.List;
 
 public class EnemyManager {
     private List<ItemSeed> droppedSeeds = new ArrayList<>();
-    private final ArrayList<Enemy> enemies = new ArrayList<>();
+    private ArrayList<Enemy> enemies = new ArrayList<>();
     private final GameTimer gameTimer;
 
     private ElderBrain elderBrain;
@@ -63,8 +63,15 @@ public class EnemyManager {
             Enemy e = iterator.next();
             e.update(delta, playerPosition);
             if (e.isDead()) {
-                droppedSeeds.add(new ItemSeed(e.getPosition().cpy()));
-                iterator.remove();
+                if (!e.isDying()) {
+                    e.startDying();  // start death animation
+                } else {
+                    e.setDeathStateTime(e.getDeathStateTime() + delta);
+                    if (e.getDeathStateTime() > 0.4f) {  // wait before removing
+                        droppedSeeds.add(new ItemSeed(e.getPosition().cpy()));
+                        iterator.remove();
+                    }
+                }
             }
         }
     }
@@ -116,5 +123,9 @@ public class EnemyManager {
 
     public void setElderBrain(ElderBrain elderBrain) {
         this.elderBrain = elderBrain;
+    }
+
+    public void setEnemies(ArrayList<Enemy> enemies) {
+        this.enemies = enemies;
     }
 }

@@ -1,5 +1,6 @@
 package io.github.some_example_name.model.enemy;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.math.Vector2;
@@ -19,9 +20,16 @@ public class ElderBrain extends Enemy {
     private float stateTime = 0f;
     private boolean isDashing = false;
     private Vector2 dashDirection = new Vector2();
+    private static final float FRAME_DURATION = 0.15f;
+    private Texture backgroundTexture;
 
-    private Animation<TextureRegion> animation;
+    private transient Animation<TextureRegion> animation;
     private DashArena arena;
+
+    //for saving
+    public ElderBrain() {
+
+    }
 
     public ElderBrain(Vector2 spawnPosition, DashArena arena) {
         super(spawnPosition, MAX_HEALTH);
@@ -30,6 +38,8 @@ public class ElderBrain extends Enemy {
             new String[]{GameAssetManager.getGameAssetManager().getElderBrain()}, 0.2f);
         texture = new Texture(GameAssetManager.getGameAssetManager().getElderBrain());
         collisionRect = new CollisionRect(position.x, position.y, texture.getWidth(), texture.getHeight());
+        deathAnimation = createAnimationFromPaths(
+            GameAssetManager.getGameAssetManager().getDamageAnimationFrames(), FRAME_DURATION);
     }
 
     private Animation<TextureRegion> createAnimationFromPaths(String[] paths, float duration) {
@@ -45,8 +55,7 @@ public class ElderBrain extends Enemy {
     public void update(float delta, Vector2 playerPosition) {
         stateTime += delta;
         dashTimer += delta;
-
-        //arena.update(delta);
+        timeSinceLastDamage += delta;
 
         if (!isDashing && dashTimer >= DASH_INTERVAL) {
             dashDirection = playerPosition.cpy().sub(position).nor();
@@ -62,19 +71,21 @@ public class ElderBrain extends Enemy {
             }
         }
 
+        if (isDying())
+            return;
+        if (timeSinceLastDamage > 0.4) {
+            Vector2 movement = isDashing
+                ? dashDirection.cpy().scl(DASH_SPEED * delta)
+                : playerPosition.cpy().sub(position).nor().scl(NORMAL_SPEED * delta);
 
-        Vector2 movement = isDashing
-            ? dashDirection.cpy().scl(DASH_SPEED * delta)
-            : playerPosition.cpy().sub(position).nor().scl(NORMAL_SPEED * delta);
-
-        position.add(movement);
+            position.add(movement);
+        } else {
+            Vector2 knockbackDir = new Vector2(position.x - lastBulletHit.getX(), position.y - lastBulletHit.getY()).nor();
+            position.add(knockbackDir.scl(NORMAL_SPEED * delta));
+        }
 
         if (isDashing && dashTimer >= 1f) {
             isDashing = false;
-        }
-
-        if (arena.collidesWith(position)) {
-            takeDamage(10);
         }
 
         if (isDead()) {
@@ -85,8 +96,31 @@ public class ElderBrain extends Enemy {
 
     @Override
     public void render(SpriteBatch batch) {
-        currentFrame = animation.getKeyFrame(stateTime);
+        if (isDying()) {
+            deathStateTime += Gdx.graphics.getDeltaTime();
+            currentFrame = deathAnimation.getKeyFrame(deathStateTime);
+
+            // Reset after short duration
+            if (deathStateTime > 0.4f) { // ~2 frames if frameDuration = 0.2f
+                dying = false;
+                deathStateTime = 0f;
+            }
+        } else {
+            currentFrame = animation.getKeyFrame(stateTime);
+        }
+
         batch.draw(currentFrame, position.x, position.y);
+    }
+
+    @Override
+    public void initTransientField() {
+        this.animation = createAnimationFromPaths(
+            new String[]{GameAssetManager.getGameAssetManager().getElderBrain()}, 0.2f);
+        this.texture = new Texture(GameAssetManager.getGameAssetManager().getElderBrain());
+        this.deathAnimation = createAnimationFromPaths(
+            GameAssetManager.getGameAssetManager().getDamageAnimationFrames(), FRAME_DURATION);
+
+        this.collisionRect = new CollisionRect(position.x, position.y, texture.getWidth(), texture.getHeight());
     }
 
     public DashArena getArena() {

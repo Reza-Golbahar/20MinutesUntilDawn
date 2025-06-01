@@ -11,7 +11,7 @@ public class ControlsMapping {
 
     private final Map<ActionType, Integer> keyMap = new HashMap<>();
 
-    public ControlsMapping() {
+    private ControlsMapping() {
         setDefaults();
     }
 

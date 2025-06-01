@@ -11,9 +11,14 @@ public class Projectile {
     private Vector2 position;
     private Vector2 velocity;
     private float lifeTime = 3f;
-    private Texture texture;
+    private transient Texture texture;
     private int damage;
     private CollisionRect collisionRect;
+
+    //for saving
+    public Projectile() {
+
+    }
 
     public Projectile(Vector2 position, Vector2 velocity, int damage) {
         this.position = position;
@@ -22,6 +27,12 @@ public class Projectile {
         this.texture = new Texture(GameAssetManager.getGameAssetManager().getEyeBatProjectile());
         updateCollisionRect();
     }
+
+    public void initTransientField() {
+        texture = new Texture(GameAssetManager.getGameAssetManager().getEyeBatProjectile());
+        updateCollisionRect();
+    }
+
 
     public void update(float delta) {
         position.add(velocity.cpy().scl(delta));

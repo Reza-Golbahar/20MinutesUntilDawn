@@ -6,15 +6,20 @@ import io.github.some_example_name.Main;
 import io.github.some_example_name.model.enums.WeaponType;
 
 public class Weapon {
-    private final WeaponType type;
-    private final Sprite sprite;
+    private WeaponType type;
+    private transient Sprite sprite;
     private int ammo;
     private int maxAmmo;
-    private Player owner;
+    private transient Player owner;
     private float damageMultiplier = 1.0f;
     private int projectileCount;
     private boolean reloaded = false;
     private double reloadTimer = 0d;
+
+    //for Saving
+    public Weapon() {
+
+    }
 
     public Weapon(Player owner, WeaponType type) {
         this.owner = owner;
@@ -118,4 +123,22 @@ public class Weapon {
     public boolean canShoot() {
         return reloadTimer <= 0 && ammo >= 1;
     }
+
+    public void initTransientFields(Player player) {
+        this.owner = player;
+
+        // Recreate sprite depending on weapon type
+        if (type.equals(WeaponType.DUAL_SMGS))
+            this.sprite = new Sprite(new Texture(GameAssetManager.getGameAssetManager().getSMGDual()));
+        else if (type.equals(WeaponType.REVOLVER))
+            this.sprite = new Sprite(new Texture(GameAssetManager.getGameAssetManager().getRevolver()));
+        else
+            this.sprite = new Sprite(new Texture(GameAssetManager.getGameAssetManager().getShotgun()));
+
+        this.sprite.setSize(50, 50);
+
+        // Important: reposition the weapon relative to player
+        updateWeaponPosition();
+    }
+
 }

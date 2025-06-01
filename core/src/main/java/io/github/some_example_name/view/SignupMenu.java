@@ -10,6 +10,7 @@ import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import io.github.some_example_name.controller.SignupMenuController;
 import io.github.some_example_name.model.UserRepository;
+import io.github.some_example_name.model.enums.UIText;
 
 public class SignupMenu implements Screen {
     private Stage stage;
@@ -32,25 +33,25 @@ public class SignupMenu implements Screen {
         UserRepository.loadUsers();
 
         // UI Elements using the provided skin
-        this.titleLabel = new Label("Signup Menu", skin);
+        this.titleLabel = new Label(UIText.SIGNUP_MENU_TITLE.get(), skin);
         this.usernameField = new TextField("", skin);
-        this.usernameField.setMessageText("Username");
+        this.usernameField.setMessageText(UIText.USERNAME.get());
 
         this.passwordField = new TextField("", skin);
-        this.passwordField.setMessageText("Password");
+        this.passwordField.setMessageText(UIText.PASSWORD.get());
         this.passwordField.setPasswordCharacter('*');
         this.passwordField.setPasswordMode(true);
 
         this.securityQuestionField = new TextField("", skin);
-        securityQuestionField.setMessageText("Security Question");
+        this.securityQuestionField.setMessageText(UIText.SECURITY_QUESTION.get());
         this.securityAnswerField = new TextField("", skin);
-        securityAnswerField.setMessageText("Answer");
+        this.securityAnswerField.setMessageText(UIText.SECURITY_ANSWER.get());
 
-        this.registerButton = new TextButton("Sign Up", skin);
+        registerButton = new TextButton(UIText.SIGN_UP.get(), skin);
         this.errorLabel = new Label("", skin);
 
-        this.guestButton = new TextButton("Continue as Guest", skin);
-        this.goToLoginMenuButton = new TextButton("Go to LogIn Menu", skin);
+        guestButton = new TextButton(UIText.CONTINUE_AS_GUEST.get(), skin);
+        goToLoginMenuButton = new TextButton(UIText.GO_TO_LOGIN_MENU.get(), skin);
 
         this.table = new Table();
 

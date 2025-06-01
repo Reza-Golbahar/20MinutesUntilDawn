@@ -11,6 +11,7 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import io.github.some_example_name.controller.PreGameMenuController;
 import io.github.some_example_name.model.GameAssetManager;
 import io.github.some_example_name.model.enums.HeroType;
+import io.github.some_example_name.model.enums.UIText;
 import io.github.some_example_name.model.enums.WeaponType;
 
 public class PreGameMenu implements Screen {
@@ -30,8 +31,8 @@ public class PreGameMenu implements Screen {
     public PreGameMenu(PreGameMenuController controller, Skin skin) {
         this.controller = controller;
 
-        this.titleLabel = new Label("Pre-Game Menu", skin);
-        this.selectedHeroLabel = new Label("Selected Hero: ", skin);
+        this.titleLabel = new Label(UIText.PRE_GAME_MENU_TITLE.get(), skin);
+        this.selectedHeroLabel = new Label(UIText.SELECTED_HERO.get(), skin);
 
         // Dummy hero and weapon selectors
         Table heroTable = new Table();
@@ -47,7 +48,7 @@ public class PreGameMenu implements Screen {
         }
         heroSelectionPane = new ScrollPane(heroTable, skin);
         heroSelectionPane.setScrollingDisabled(true, false);
-        this.selectedWeaponLabel = new Label("Selected Weapon: ", skin);
+        this.selectedWeaponLabel = new Label(UIText.SELECTED_WEAPON.get(), skin);
 
         Table weaponTable = new Table();
         for (WeaponType weaponType : WeaponType.values()) {
@@ -73,7 +74,7 @@ public class PreGameMenu implements Screen {
             }
         });
 
-        startGame = new TextButton("Start Game", skin);
+        startGame = new TextButton(UIText.START_GAME.get(), skin);
         startGame.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -98,15 +99,15 @@ public class PreGameMenu implements Screen {
 
         mainTable.add(titleLabel).colspan(2).center().row();
 
-        mainTable.add(new Label("Choose Hero:", skin)).left();
+        mainTable.add(new Label(UIText.SELECT_HERO.get(), skin)).left();
         mainTable.add(heroSelectionPane).height(150).width(200).row();
         mainTable.add(selectedHeroLabel).height(50).width(200).row();
 
-        mainTable.add(new Label("Choose Weapon:", skin)).left();
+        mainTable.add(new Label(UIText.SELECT_WEAPON.get(), skin)).left();
         mainTable.add(weaponSelectionPane).height(150).width(200).row();
         mainTable.add(selectedWeaponLabel).height(50).width(200).row();
 
-        mainTable.add(new Label("Game Duration (minutes):", skin)).left();
+        mainTable.add(new Label(UIText.GAME_DURATION.get(), skin)).left();
         mainTable.add(gameDurationBox).left().row();
 
         mainTable.add(startGame).colspan(2).center().padTop(20);

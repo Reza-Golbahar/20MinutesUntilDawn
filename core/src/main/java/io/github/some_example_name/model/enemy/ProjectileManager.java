@@ -7,6 +7,11 @@ import java.util.List;
 public class ProjectileManager {
     private final List<Projectile> projectiles = new ArrayList<>();
 
+    //for saving
+    public ProjectileManager() {
+
+    }
+
     public void add(Projectile p) {
         projectiles.add(p);
     }

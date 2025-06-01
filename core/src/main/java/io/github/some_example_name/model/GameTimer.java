@@ -3,6 +3,12 @@ package io.github.some_example_name.model;
 import io.github.some_example_name.Main;
 
 public class GameTimer {
+
+    //For Saving
+    public GameTimer() {
+
+    }
+
     private float elapsedTime = 0;
 
     public void update(float delta) {

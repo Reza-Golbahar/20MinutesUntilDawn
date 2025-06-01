@@ -3,6 +3,12 @@ package io.github.some_example_name.model;
 public class CollisionRect {
     float x, y;
     float width, height;
+
+    //for saving
+    public CollisionRect() {
+        
+    }
+
     public CollisionRect(float x, float y, float width, float height){
         this.x = x;
         this.y = y;
